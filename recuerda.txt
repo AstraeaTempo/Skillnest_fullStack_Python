@@ -1,0 +1,42 @@
+🧰 Funciones y métodos integrados
+___________________________________________________________________________________________________
+
+A continuación te presentamos algunas funciones que te serán de gran utilidad para los diccionarios:
+
+___________________________________________________________________________________________________
+
+📏 len(diccionario): regresa el tamaño de un diccionario .
+
+🔤 str(diccionario): crea una representación de cadena (imprimible) de un diccionario.
+
+🧪 type(diccionario): regresa el tipo de la variable. Si la variable es un diccionario, 
+devolverá un tipo de dict.
+
+___________________________________________________________________________________________________
+
+Veamos también algunos métodos de los diccionarios. La sintaxis puede ser dict.method(tu_diccionario) 
+o tu_diccionario.method(), donde method es el método a utilizar.
+
+___________________________________________________________________________________________________
+
+🧹 .clear(): elimina todos los elementos del diccionario
+
+📝 .copy(): regresa una copia del diccionario
+
+🔍 .get(clave, default=None): regresa el valor establecido para una clave o None 
+si la clave no se encuentra en el diccionario.
+
+✅ .has_key(clave): regresa verdadero (True) si la clave proporcionada está disponible 
+en el diccionario; de lo contrario, devuelve False.
+
+📦 .items(): regresa una lista de pares de tuplas (clave, valor) del diccionario.
+
+🗝️ .keys(): regresa una lista de claves de diccionario.
+
+♻️ .update(pares_actualizar): agrega y actualiza los pares clave-valor del diccionario 
+enviado al diccionario existente.
+
+📋 .values(): regresa una lista de valores del diccionario.
+Explora más métodos para los diccionarios aquí.
+
+___________________________________________________________________________________________________
