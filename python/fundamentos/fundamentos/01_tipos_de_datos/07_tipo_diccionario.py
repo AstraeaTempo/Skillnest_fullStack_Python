@@ -38,8 +38,8 @@ pintor = {
 escuela = {
    "nombre": "Coding Dojo LATAM",
    "profesores": [
-       {"nombre": "Alfredo", "apellido": "Salazar", "cursos": ["Python", "Java"]},
-       {"nombre": "Valeria", "apellido": "Romero", "cursos": ["Fundamentos", "Java"]},
-       {"nombre": "Marcelo", "apellido": "Argotti", "cursos":["MERN", "Python"]}
+      {"nombre": "Alfredo", "apellido": "Salazar", "cursos": ["Python", "Java"]},
+      {"nombre": "Valeria", "apellido": "Romero", "cursos": ["Fundamentos", "Java"]},
+      {"nombre": "Marcelo", "apellido": "Argotti", "cursos":["MERN", "Python"]}
    ]
 }
