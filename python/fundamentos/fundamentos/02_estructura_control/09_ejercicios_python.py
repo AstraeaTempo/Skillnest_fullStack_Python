@@ -7,8 +7,9 @@
 
 n = int(input("¿Cuántos números pares deseas ver?: "))
 # Usamos un rango que empiece en 2, llegue hasta n*2 + 1 y salte de 2 en 2
-for i in range(2, (n * 2) + 1, 2):
-    print(i)
+for i in range(1, n+2):
+    resultado = i*2
+    print(resultado)
 
 #2. Verificador de Edad y Acceso
 #Pide al usuario su año de nacimiento. Calcula su edad y muestra si es mayor 
