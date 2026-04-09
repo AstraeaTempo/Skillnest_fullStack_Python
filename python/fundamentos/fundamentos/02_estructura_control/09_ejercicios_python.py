@@ -6,25 +6,28 @@
 # El programa debe imprimir los primeros $n$ números pares positivos.
 
 n = int(input("¿Cuántos números pares deseas ver?: "))
-# Usamos un rango que empiece en 2, llegue hasta n*2 + 1 y salte de 2 en 2
-for i in range(1, n+2):
-    resultado = i*2
-    print(resultado)
+pares = []
+for i in range(1, ( n * 2) + 1):
+    if i % 2 == 0:
+        pares.append(i)
+print(f"Mostrande pares: {pares}")
 
 #2. Verificador de Edad y Acceso
 #Pide al usuario su año de nacimiento. Calcula su edad y muestra si es mayor 
 # de edad (18+). Si tiene menos de 18, indica cuántos años le faltan para la mayoría de edad.
 
-from datetime import date
-anio_nacimiento = int(input("Ingresa tu año de nacimiento: "))
-anio_actual = date.today().year # Obtenemos el año actual del sistema
-edad = anio_actual - anio_nacimiento
-
-if edad >= 18:
-    print(f"Tienes {edad} años. Eres mayor de edad.")
-else:
-    faltan = 18 - edad
-    print(f"Tienes {edad} años. Te faltan {faltan} años para la mayoría de edad.")
+def verificador_edad():
+    campo = input("ingrese su año de nacimiento: ")
+    edad = 2026 - int(campo)
+    if campo == "":
+        print("Error")
+    elif int(campo) >= 18:
+        print(f"tienes acceso ya que tu edad es: {edad}")
+    elif edad > 0 and edad < 18:
+        print("no tienes acceso: te faltan {18 - edad} años.")
+    else:
+        print("ingrese valores validos")
+verificador_edad()
 
 #3. Calculadora de Descuentos
 #Solicita el precio de un producto y la cantidad comprada. Si el total supera 
