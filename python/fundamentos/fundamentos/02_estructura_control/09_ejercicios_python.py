@@ -5,12 +5,13 @@
 #Desarrolla un programa que solicite al usuario cuántos números pares desea ver ($n$). 
 # El programa debe imprimir los primeros $n$ números pares positivos.
 
-n = int(input("¿Cuántos números pares deseas ver?: "))
-pares = []
-for i in range(1, ( n * 2) + 1):
-    if i % 2 == 0:
-        pares.append(i)
-print(f"Mostrande pares: {pares}")
+def numerosDinamicos():
+    n = int(input("¿Cuántos números pares deseas ver?: "))
+    pares = []
+    for i in range(1, n + 1):
+        if i % 2 == 0:
+            pares.append
+    print(f"mostrando pares: {pares}")
 
 #2. Verificador de Edad y Acceso
 #Pide al usuario su año de nacimiento. Calcula su edad y muestra si es mayor 
@@ -255,3 +256,34 @@ for i in range(7):
 print(f"\nPromedio semanal: {promedio:.1f}°C")
 print(f"Días con más de 25°C: {dias_calurosos}")
 print(f"Día más frío: {dia_mas_frio} con {min_temp}°C")
+
+continuar = True
+while continuar:
+    print("\n---ejercicios python---")
+    print("---1.- ejercicio 1---")
+    print("---2.- ejercicio 2---")
+    print("---3.- ejercicio 3---")
+    print("---4.- ejercicio 4---")
+    print("---5.- ejercicio 5---")
+    print("---6.- ejercicio 6---")
+    print("---7.- ejercicio 7---")
+    print("---8.- ejercicio 8---")
+    print("---9.- ejercicio 9---")
+    print("---10.- ejercicio 10---")
+    print("---11.- ejercicio 11---")
+    print("---12.- ejercicio 12---")
+    print("---13.- ejercicio 13---")
+    print("---14.- ejercicio 14---")
+    print("---15.- ejercicio 15---")
+    opcion = input("\n---- elige una opcion: (1-15) (0 para salir) =")
+    if opcion == "1":
+        print("\nEjecutando ejercicio 1: ")
+        print(numerosDinamicos())
+    elif opcion == "2":
+        print("\nEjecutando ejercicio 2: ")
+        print(verificador_edad)
+    elif opcion == "0":
+        print("Saliendo...")
+        continuar = False
+    else:
+        print("Opcion no visible, intenta otra vez")
