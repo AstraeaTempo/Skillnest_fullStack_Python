@@ -34,18 +34,17 @@ verificador_edad()
 #Solicita el precio de un producto y la cantidad comprada. Si el total supera 
 # los $100, aplica un 15% de descuento. Muestra el subtotal, el descuento aplicado y el total final.
 
-precio = float(input("Precio del producto: "))
-cantidad = int(input("Cantidad comprada: "))
-subtotal = precio * cantidad
+def aplicarDescuentos():
+    precio = float(input("Precio del producto: "))
+    cantidad = int(input("Cantidad comprada: "))
+    producto = precio * cantidad
 
-if subtotal > 100:
-    descuento = subtotal * 0.15 # Calculamos el 15%
-    total = subtotal - descuento
-else:
-    descuento = 0
-    total = subtotal
-
-print(f"Subtotal: ${subtotal} | Descuento: ${descuento} | Total: ${total}")
+    if producto > 100:
+        descuento = producto * 0.15 # Calculamos el 15%
+    else:
+        descuento = 0
+    total = producto
+    print(f"el subtototal es: {producto} el Descuento aplicado es: {descuento} y el Total es: {total}")
 
 #4. Clasificador de Números
 #Pide un número al usuario e indica si es: Positivo-Par, Positivo-Impar, 
