@@ -84,44 +84,51 @@ def  tablaMultiplicar():
 # terminar cuando el usuario ingrese un número negativo. Al final, muestra la suma total 
 # (sin incluir el negativo).
 
-suma_total = 0
-# Usamos un bucle infinito que romperemos con 'break'
-while True:
-    n = float(input("Ingresa un número (negativo para salir): "))
-    if n < 0:
-        break # Detiene el bucle inmediatamente
-    suma_total += n
 
-print(f"La suma total es: {suma_total}")
+# Usamos un bucle infinito que romperemos con 'break'
+def sumatoriaCentinela():
+    suma_total = 0
+    while True:
+        n = int(input("Ingresa un número (negativo para salir): "))
+        if n < 0:
+            break # Detiene el bucle inmediatamente
+        suma_total += n
+    print(f"La suma total es: {suma_total}")
 
 #7. Contador de Vocales
 #Pide al usuario una frase o palabra. Utiliza un bucle para recorrer la 
 # cadena y contar cuántas vocales tiene en total.
 
-frase = input("Ingresa una frase: ").lower() # Convertimos a minúsculas para facilitar la cuenta
-vocales = "aeiou"
-contador = 0
-
-for caracter in frase:
-    if caracter in vocales:
-        contador += 1
-
-print(f"Total de vocales: {contador}")
+def contadorVocales():
+    texto = input("Ingrese una palabra o frase: ").lower()
+    vocales = 0
+    for i in range(len(texto)):
+        if texto[i] == "a" or texto[i] == "e" or texto[i] == "i" or texto[i] == "o" or texto[i] == "u":
+            vocales += 1
+        elif texto[i] == "á" or texto[i] == "é" or texto[i] == "í" or texto[i] == "ó" or texto[i] == "ú":
+            vocales += 1
+    print(f"La cadena '{texto}' tiene {vocales} vocales en total")
 
 #8. Validación de Contraseña
 #Define una contraseña en una variable. Pide al usuario que la intente adivinar. 
 # Tienes un máximo de 3 intentos; si falla los 3, bloquea el acceso.
 
-password_correcta = "python123"
-# El rango define los 3 intentos
-for intento in range(1, 4):
-    entrada = input(f"Intento {intento} - Ingresa la contraseña: ")
-    if entrada == password_correcta:
-        print("Acceso concedido.")
-        break
-else:
-    # El 'else' de un 'for' se ejecuta si el bucle termina sin un 'break'
-    print("Acceso bloqueado. Agotaste los intentos.")
+def validacion():
+    con = 12345678
+    intentos = 1
+    while True:
+        ingresa = int(input("ingresa la contraseña: "))
+        if ingresa == con:
+            print("acceso concedido")
+            break
+        else:
+            intentos += 1
+            if intentos > 3:
+                print("Acceso denegado")
+                break
+            else:
+                print(f"Números de intentos: {intentos}")
+
 
 #III. Manejo de Arreglos / Listas (Avanzado)
 
@@ -284,6 +291,24 @@ while continuar:
     elif opcion == "2":
         print("\nEjecutando ejercicio 2: ")
         print(verificador_edad)
+    elif opcion == "3":
+        print("\nEjecutando ejercicio 3: ")
+        print(aplicarDescuentos)
+    elif opcion == "4":
+        print("\nEjecutando ejercicio 4: ")
+        print(clasificadorNum)
+    elif opcion == "5":
+        print("\nEjecutando ejercicio 5: ")
+        print(tablaMultiplicar)
+    elif opcion == "6":
+        print("\nEjecutando ejercicio 6: ")
+        print(sumatoriaCentinela)
+    elif opcion == "7":
+        print("\nEjecutando ejercicio 7: ")
+        print(contadorVocales)
+    elif opcion == "8":
+        print("\nEjecutando ejercicio 7: ")
+        print(validacion)
     elif opcion == "0":
         print("Saliendo...")
         continuar = False
