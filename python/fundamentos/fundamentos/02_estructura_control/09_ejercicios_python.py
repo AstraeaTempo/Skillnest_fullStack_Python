@@ -49,18 +49,20 @@ def aplicarDescuentos():
 #4. Clasificador de Números
 #Pide un número al usuario e indica si es: Positivo-Par, Positivo-Impar, 
 # Negativo-Par, Negativo-Impar o Cero.
-
-num = int(input("Ingresa un número: "))
-
-if num == 0:
-    print("Cero")
-elif num > 0:
-    # Anidamos la lógica para ver si es par o impar
-    tipo = "Par" if num % 2 == 0 else "Impar"
-    print(f"Positivo-{tipo}")
-else:
-    tipo = "Par" if num % 2 == 0 else "Impar"
-    print(f"Negativo-{tipo}")
+def  clasificadorNum():
+    num = int(input("Ingresa un número: "))
+    if num > 0:
+        if num % 2 ==0:
+            print("positivo-par")
+        elif num % 2 ==1:
+            print("positivo-impar")
+    elif num <0:
+        if num % 2 == 0:
+            print("negativo-par")
+        elif num % 2 == 1:
+            print("negativo-impar")
+    else:
+        print("es 0")
 
 #II. Iteraciones y Bucles (Intermedio)
 
@@ -68,11 +70,12 @@ else:
 #Solicita un número entero y muestra su tabla de multiplicar del 1 al 12, 
 # pero solo muestra los resultados que sean múltiplos de 3.
 
-num = int(input("Ingresa un número para su tabla: "))
+def  tablaMultiplicar():
+    num = int(input("Ingresa un número para su tabla: "))
 
-for i in range(1, 13):
-    resultado = num * i
-    # Verificamos si el resultado es múltiplo de 3 usando el operador módulo %
+    for i in range(1, 13):
+       resultado = num * i
+        # Verificamos si el resultado es múltiplo de 3 usando el operador módulo %
     if resultado % 3 == 0:
         print(f"{num} x {i} = {resultado}")
 
