@@ -16,7 +16,7 @@ print(result1)
 # Analiza publicaciones
 def suma_y_resta():
     for i in range(235):
-        return
+        pass
     suma_y_resta([120, 115])
 # Imprime: 235 y retorna: 5
 
@@ -39,10 +39,15 @@ def valores_multiplicados_segundo():
 
 #ejercicio 5 __________________________________________________________________________________________
 # Genera precio fijo
-def valor_multiplicado_longitud():
-    valor_multiplicado_longitud(5, 2)
+def valor_multiplicado_longitud(valor, longitud):
+    producto = valor * longitud
+    resultado = []
+    for i in range(longitud):
+        resultado.append(producto)
+    return resultado
+
+print(valor_multiplicado_longitud(5, 2))
 # Debe retornar: [10, 10]
 
-    valor_multiplicado_longitud(7, 5)
+print(valor_multiplicado_longitud(7, 5))
 # Debe retornar: [35, 35, 35, 35, 35]
-
