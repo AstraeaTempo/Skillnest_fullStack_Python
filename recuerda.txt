@@ -40,3 +40,44 @@ enviado al diccionario existente.
 Explora más métodos para los diccionarios aquí.
 
 ___________________________________________________________________________________________________
+
+## Menu
+
+def limpiar_consola():  (#para hacer este necesitas "import os" al inicio de todo el codigo)
+    os.system('cls')
+
+continuar = True
+while continuar:
+    print("\n--- Ejercicios Python")
+    print("--- 1. Ejercicio 1 ---")
+    print("--- 2. Ejercicio 2 ---")
+    print("--- 3. Ejercicio 3 ---")
+    print("--- 4. Ejercicio 4 ---")
+    print("--- 5. Ejercicio 5 ---")
+    opcion = input("\n---- elige una opcion: (1-5) (0 para salir) = ")
+    if opcion == "1":
+        limpiar_consola()
+        print("\nEjecutando ejercicio 1: ")
+        ejercicio1()
+    elif opcion == "2":
+        limpiar_consola()
+        print("\nEjecutando ejercicio 2: ")
+        ejercicio2()
+    elif opcion == "3":
+        limpiar_consola()
+        print("\nEjecutando ejercicio 3: ")
+        ejercicio3()
+    elif opcion == "4":
+        limpiar_consola()
+        print("\nEjecutando ejercicio 4: ")
+        ejercicio4()
+    elif opcion == "5":
+        limpiar_consola()
+        print("\nEjecutando ejercicio 5: ")
+        ejercicio5()
+    elif opcion == "0":
+        limpiar_consola()
+        print("Saliendo...")
+        continuar = False
+    else:
+        print("Opcion no visible, intenta otra vez")
