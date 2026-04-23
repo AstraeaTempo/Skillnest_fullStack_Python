@@ -217,3 +217,5 @@ estructuras mixtas
 f-strings
 funciones con parámetros
 reutilización de código
+
+diccionario es con []
