@@ -58,7 +58,6 @@ def valores_multiplicados_segundo(lista):
         print(long)
         return nuevaLista
 
-
 # Imprime: 4 y retorna: [300, 9, 150, 60]
 def ejercicio4():
     result1 = valores_multiplicados_segundo([100, 3, 50, 20])
