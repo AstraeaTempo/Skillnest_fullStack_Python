@@ -14,10 +14,6 @@ streamers = [
 streamers[0]["nombre"] = "EliteGamerX"
 print(streamers[0]["nombre"])
 
-#Funciones para recorrer y representar datos:
-def iterar_diccionario(lista):
-    return
-
 
 # Eventos en distintas ciudades del mundo-------------------------------------------------------------------
 eventos = {
@@ -28,9 +24,34 @@ eventos = {
 eventos["Estados Unidos"][2] = "San Francisco"
 print(eventos["Estados Unidos"][2])
 
-#Mostrar información de un diccionario con listas:
-def mostrar_informacion(diccionario):
-    categorias = {
+
+# Coordenadas de la sede de un torneo internacional---------------------------------------------------------
+ubicacion = [
+    {"latitud": 34.052235, "longitud": -118.243683}
+]
+# Actualización de datos
+ubicacion[0]["latitud"] = 40.712776
+print(ubicacion[0]["latitud"])
+
+
+#Funciones para recorrer y representar datos:----------------------------------------------------------------
+def mostrar_streamers(lista):
+    for item in lista:
+        print(f"Nombre: {item['nombre']} - Seguidores: {item['seguidores']}")
+mostrar_streamers(streamers)
+
+stream = {
+    "nombre": ["EliteGamerX", "PixelWarrior"],
+    "seguidores": ["250000", "180000"]
+}
+for separacion, orden in stream.items():
+    print(separacion)
+    for item in orden:
+        print(item)
+
+
+#Mostrar información de un diccionario con listas:-------------------------------------------------------------
+categorias = {
     "juegos_populares": [
         "Fortnite", 
         "Minecraft", 
@@ -43,15 +64,10 @@ def mostrar_informacion(diccionario):
         "Tokio",
     ]
 }
-    for item in diccionario:
-        return
-
-
-
-# Coordenadas de la sede de un torneo internacional---------------------------------------------------------
-ubicacion = [
-    {"latitud": 34.052235, "longitud": -118.243683}
-]
-# Actualización de datos
-ubicacion[0]["latitud"] = 40.712776
-print(ubicacion[0]["latitud"])
+#Diccionario_______________________________________
+def mostrar_categorias(diccionario):
+    for categoria, items in diccionario.items():
+        print(f"{len(items)} {categoria.upper()}")
+        for item in items:
+            print(item)
+mostrar_categorias(categorias)
