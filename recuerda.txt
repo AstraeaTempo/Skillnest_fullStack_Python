@@ -81,3 +81,139 @@ while continuar:
         continuar = False
     else:
         print("Opcion no visible, intenta otra vez")
+
+___________________________________________________________________________________________________
+
+📘 CUADERNO DE APUNTES — MANEJO DE DATOS EN PYTHON
+1. 🔹 Listas anidadas (matrices simples)
+Una lista puede contener otras listas. Para acceder a los valores usamos índices.
+📌 Ejemplo
+numeros = [[1, 2, 3], [4, 5, 6]]
+
+# Acceder al número 5
+print(numeros[1][1])  # fila 1, posición 1
+✏️ Modificación
+numeros[0][2] = 10
+print(numeros)  # [[1, 2, 10], [4, 5, 6]]
+🧠 Clave conceptual
+Primer índice → lista interna
+Segundo índice → elemento dentro de esa lista
+
+2. 🔹 Diccionarios dentro de listas
+Muy común en aplicaciones reales (simula registros o filas de base de datos).
+📌 Ejemplo
+usuarios = [
+   {"nombre": "Ana", "edad": 25},
+   {"nombre": "Luis", "edad": 30}
+]
+
+# Acceder a "Luis"
+print(usuarios[1]["nombre"])
+✏️ Modificación
+usuarios[0]["edad"] = 26
+🧠 Clave conceptual
+Lista → colección de elementos
+Diccionario → estructura clave-valor
+
+3. 🔹 Diccionarios con listas como valores
+Útil para agrupar datos por categorías.
+📌 Ejemplo
+cursos = {
+   "programacion": ["Python", "JavaScript"],
+   "diseno": ["Figma", "Photoshop"]
+}
+
+# Acceder a JavaScript
+print(cursos["programacion"][1])
+✏️ Modificación
+cursos["diseno"][0] = "Illustrator"
+🧠 Clave conceptual
+Diccionario organiza
+Lista contiene múltiples valores
+
+4. 🔹 Lista de diccionarios con coordenadas
+Caso típico en mapas o APIs.
+📌 Ejemplo
+lugares = [
+   {"lat": -33.4489, "lng": -70.6693}
+]
+
+# Modificar latitud
+lugares[0]["lat"] = -34.6037
+
+🔁 5. Iteración con for
+🔹 Recorrer listas simples
+nombres = ["Ana", "Luis", "Pedro"]
+
+for nombre in nombres:
+   print(nombre)
+
+🔹 Recorrer lista de diccionarios
+productos = [
+   {"nombre": "Teclado", "precio": 20000},
+   {"nombre": "Mouse", "precio": 10000}
+]
+
+for producto in productos:
+   print(producto["nombre"], producto["precio"])
+
+🔹 Usando f-strings (MUY importante)
+for producto in productos:
+   print(f"{producto['nombre']} cuesta {producto['precio']}")
+
+🧩 6. Funciones con estructuras de datos
+🔹 Ejemplo 1: imprimir datos formateados
+def mostrar_productos(lista):
+   for item in lista:
+       print(f"Producto: {item['nombre']} - Precio: {item['precio']}")
+
+mostrar_productos(productos)
+
+🔹 Ejemplo 2: imprimir solo una clave
+def imprimir_clave(clave, lista):
+   for item in lista:
+       print(item[clave])
+
+imprimir_clave("nombre", productos)
+
+🧠 Clave conceptual
+clave permite reutilizar la función
+Hace el código más flexible
+
+🔄 7. Iterar diccionarios con .items()
+Esto permite recorrer clave y valor al mismo tiempo.
+📌 Ejemplo
+inventario = {
+   "frutas": ["manzana", "pera"],
+   "verduras": ["zanahoria", "lechuga"]
+}
+
+for categoria, lista in inventario.items():
+   print(categoria)
+   for item in lista:
+       print(item)
+
+✏️ Versión formateada
+def mostrar_inventario(diccionario):
+   for categoria, items in diccionario.items():
+       print(f"{len(items)} {categoria.upper()}")
+       for item in items:
+           print(item)
+
+mostrar_inventario(inventario)
+
+🧠 RESUMEN CLAVE (esto es lo que el estudiante DEBE dominar)
+Antes del core, el estudiante debería poder:
+✔ Acceder y modificar:
+listas → lista[i]
+listas anidadas → lista[i][j]
+diccionarios → dic["clave"]
+combinaciones → lista[i]["clave"]
+✔ Recorrer:
+listas con for
+diccionarios con .items()
+estructuras mixtas
+✔ Usar:
+f-strings
+funciones con parámetros
+reutilización de código
