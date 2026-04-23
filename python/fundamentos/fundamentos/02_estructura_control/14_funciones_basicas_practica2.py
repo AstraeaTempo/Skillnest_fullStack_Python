@@ -61,25 +61,31 @@ def valores_multiplicados_segundo(lista):
 # Imprime: 4 y retorna: [300, 9, 150, 60]
 def ejercicio4():
     result1 = valores_multiplicados_segundo([100, 3, 50, 20])
-    valores_multiplicados_segundo([100])
+    print(result1)
+    print()
+    result2 = valores_multiplicados_segundo([100])
+    print(result2)
 # Imprime: 1 y retorna: []
 
 
 #ejercicio 5 __________________________________________________________________________________________
 # Genera precio fijo
-def valor_multiplicado_longitud(valor, longitud):
-    producto = valor * longitud
-    resultado = []
-    for i in range(longitud):
-        resultado.append(producto)
-    return resultado
+def valor_multiplicado_longitud(a, b):
+    multList = []
+    for i in range(0, b):
+        multList.append(a * b)
+    return multList
 
 def ejercicio5():
-    print(valor_multiplicado_longitud(5, 2))
+    result1 = print(valor_multiplicado_longitud(5, 2))
+    print(f"Resultado 1: {result1}")
 # Debe retornar: [10, 10]
-    print(valor_multiplicado_longitud(7, 5))
+    result2 = print(valor_multiplicado_longitud(7, 5))
+    print(f"Resultado 2: {result2}")
 # Debe retornar: [35, 35, 35, 35, 35]
 
+
+#Menu
 def limpiar_consola():
     os.system('cls')
 
