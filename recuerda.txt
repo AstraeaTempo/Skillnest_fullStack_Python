@@ -224,7 +224,8 @@ ________________________________________________________________________________
 
 #Creación de la clase usuario - Entidad (creas una clase)
 class Usuario:
-    def __init__(self): #Constructor (donde entra todo lo de la clase)
+    def __init__(self): #Constructor (donde entra todo lo de la clase) 
+    (self es para seleccionar la funcion / )
         self.nombre = "Nariyoshi"
         self.apellido = "Miyagi"
         self.email = "miyagi@codingdojo.la"
