@@ -51,6 +51,10 @@ class Estudiante:
         self.especialidad = especialidad
         self.fecha_nac = fecha_nac
 
-jest = Estudiante("28.979.420-9", "Jest", "Terss", "")
-rotie = Estudiante("48.284.289-4", "Rotie", "Pote", "")
-hart = Estudiante("19.394.209-1", "Hart", "Luit", "")
+jest = Estudiante("28.979.420-9", "Jest", "Terss", "Recursos Humanos", "29/09/1965")
+rotie = Estudiante("48.284.289-4", "Rotie", "Pote", "Logistica", "18/05/1990")
+hart = Estudiante("19.394.209-1", "Hart", "Luit", "Programación", "26/05/2000")
+
+print(f"mi nombre es {jest.nombre}, mi apellido es {jest.apellido} y pertenesco a la especialidad de {jest.especialidad}")
+print(f"mi nombre es {rotie.nombre}, mi apellido es {rotie.apellido} y pertenesco a la especialidad de {rotie.especialidad}")
+print(f"mi nombre es {hart.nombre}, mi apellido es {hart.apellido} y pertenesco a la especialidad de {hart.especialidad}")
