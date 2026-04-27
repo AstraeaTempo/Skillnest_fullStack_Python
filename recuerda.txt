@@ -219,3 +219,30 @@ funciones con parámetros
 reutilización de código
 
 diccionario es con []
+
+___________________________________________________________________________________________________
+
+#Creación de la clase usuario - Entidad (creas una clase)
+class Usuario:
+    def __init__(self): #Constructor (donde entra todo lo de la clase)
+        self.nombre = "Nariyoshi"
+        self.apellido = "Miyagi"
+        self.email = "miyagi@codingdojo.la"
+        self.limite_credito = 30000
+        self.saldo_pagar = 0
+
+#Instancias de una clase
+miyagi = Usuario() (variable - funcion())
+daniel = Usuario()
+
+#Pasar argumentos ________________________________________________________________________________________
+#Para poder personalizar nuestras instancia vamos a pasar algunos 
+# argumentos al método __init__ y que de esta manera podamos asignarle 
+# a los atributos los valores correspondientes.
+class Usuario:
+    def __init__(self, nombre, apellido, email): (parametros)
+        self.nombre = nombre
+        self.apellido = apellido
+        self.email = email
+        self.limite_credito = 30000
+        self.saldo_pagar = 0
