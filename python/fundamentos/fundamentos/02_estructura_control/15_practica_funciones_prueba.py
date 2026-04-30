@@ -112,11 +112,36 @@ notis()
 
 #Ejercicio 5-------------------------------------------------------------------------------------------
 
+def descuento(valor):
+    sumaLista = sum(valor)
+    precioInicial = sumaLista
+    descuento = sumaLista * 0.1
+    precioFinal = precioInicial - descuento
+    print(f"El precio inicial del producto es: \n{precioInicial}\ny con descuento \n{precioFinal}")
 
+def valores():
+    cantidadProductos = int(input("Ingrese cantidad de productos: "))
+    listaPrecios = []
+    for i in range(cantidadProductos):
+        valorProducto = float(input("Ingrese el valor del producto:\n"))
+        listaPrecios.append(valorProducto)
+    descuento(listaPrecios)
+valores()
 
 #Ejercicio 6-------------------------------------------------------------------------------------------
 
+def par_impar(numero):
+    if numero % 2 == 0:
+        print(f"El número {numero} es par.")
+    elif numero % 3 == 0:
+        print(f"El número {numero} es Impar.")
+    else:
+        print("Error")
 
+def recibirNum():
+    num = int(input("Ingrese un número: "))
+    par_impar(num)
+recibirNum()
 
 #Ejercicio 7-------------------------------------------------------------------------------------------
 
@@ -161,7 +186,7 @@ while continuar:
     print("---8.- ejercicio 8---")
     print("---9.- ejercicio 9---")
     print("---10.- ejercicio 10---")
-    opcion = input("\n---- elige una opcion: (1-15) (0 para salir) =")
+    opcion = input("\n---- elige una opcion: (1-10) (0 para salir) = ")
     if opcion == "1":
         print("\n--------- Número mayor y menor ---------")
         ()
@@ -176,10 +201,10 @@ while continuar:
         notis()
     elif opcion == "5":
         print("\n--------- Descuento del 10% ---------")
-        ()
+        valores()
     elif opcion == "6":
         print("\n--------- Par o Impar ---------")
-        ()
+        recibirNum()
     elif opcion == "7":
         print("\n--------- Mayor de 18 años ---------")
         ()
