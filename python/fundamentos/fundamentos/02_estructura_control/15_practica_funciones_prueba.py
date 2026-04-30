@@ -68,78 +68,71 @@ def vocal():
 def filtrar(lista):
     resultado = []
     for nombre in lista:
-        if len(nombre) >5:
+        if len(nombre) > 5:
             resultado.append(nombre)
     return resultado
-
 def mostrar():
     nombres = []
-    nombreLargos = []
-    cantidad = int(input("¿Cuántos nombres quiere ingresar?: "))
+    cantidad = int(input("¿cuantos nombres quiere ingresar?: "))
     for i in range(cantidad):
-        nombre = input("Ingrese un nombre: ")
-        print(f"{nombre} agregado con exito a la lista.")
-        nombres.append(nombres)
-    for nombre in filtrar(nombres):
-        nombreLargos.append(nombre)
-    print(f"Los nombres con más de 5 letras son: ")
+        nombre = input("ingrese un nombre: ")
+        print(f"{nombre} agregado con exito a la lista")
+        nombres.append(nombre)
+    
+    listaNombres = filtrar(nombres)
+    print(f"los nombres con mas de 5 letras son: \n- {("\n").join(listaNombres)}")
+
 mostrar()
 
 #Ejercicio 4-------------------------------------------------------------------------------------------
 
-def t():
-    pass
+def listaNotas(notas):
+    lista = 0
+    promedio = 0
+    for i in range(len(notas)):
+        lista += notas[1]
+        promedio = lista / (len(notas) + 1)
 
-def t():
-    pass
+    if notas[i] >= 4.0 and notas[i] <= 7.0:
+        print(f"el estudiante aprueba con {promedio}")
+    elif notas[i] >= 1 and notas[i] <= 3.9:
+        print(f"el estudiante no aprueba con {promedio}")
+    else:
+        return "error"
+
+def notis():
+    largo = int(input("Cuantas notas va a ingresar: "))
+    nota = []
+    for i in range(largo):
+        inp = float(input(f"Ingresa nota {i + 1}: "))
+        if inp != "":
+            nota.append(inp)
+    print(listaNotas(nota))
+notis()
 
 #Ejercicio 5-------------------------------------------------------------------------------------------
 
-def t():
-    pass
 
-def t():
-    pass
 
 #Ejercicio 6-------------------------------------------------------------------------------------------
 
-def t():
-    pass
 
-def t():
-    pass
 
 #Ejercicio 7-------------------------------------------------------------------------------------------
 
-def t():
-    pass
 
-def t():
-    pass
 
 #Ejercicio 8-------------------------------------------------------------------------------------------
 
-def t():
-    pass
 
-def t():
-    pass
 
 #Ejercicio 9-------------------------------------------------------------------------------------------
 
-def t():
-    pass
 
-def t():
-    pass
 
 #Ejercicio 10------------------------------------------------------------------------------------------
 
-def t():
-    pass
 
-def t():
-    pass
 
 # Requisitos obligatorios Su trabajo debe cumplir con lo siguiente:
 
@@ -154,6 +147,7 @@ def t():
 #Opción de salida del programa (0. Salir)
 
 #Menu
+
 continuar = True
 while continuar:
     print("\n---ejercicios python---")
@@ -167,19 +161,19 @@ while continuar:
     print("---8.- ejercicio 8---")
     print("---9.- ejercicio 9---")
     print("---10.- ejercicio 10---")
-    opcion = input("\n---- elige una opcion: (1-10) (0 para salir) = ")
+    opcion = input("\n---- elige una opcion: (1-15) (0 para salir) =")
     if opcion == "1":
         print("\n--------- Número mayor y menor ---------")
-        recibirLista()
+        ()
     elif opcion == "2":
         print("\n--------- Cadenas de Vocales ---------")
-        vocal()
+        ()
     elif opcion == "3":
         print("\n--------- Nombres con más de 5 letras ---------")
         mostrar()
     elif opcion == "4":
         print("\n--------- Notas: Apruebas o Repruebas ---------")
-        ()
+        notis()
     elif opcion == "5":
         print("\n--------- Descuento del 10% ---------")
         ()
@@ -199,7 +193,7 @@ while continuar:
         print("\n--------- Productos con stock menor a 5 ---------")
         ()
     elif opcion == "0":
-        print("Saliendo...")
+        print("saliendo...")
         continuar = False
     else:
-        print("Opcion no visible, intenta otra vez")
+        print("opcion no valida, intenta otra vez")
