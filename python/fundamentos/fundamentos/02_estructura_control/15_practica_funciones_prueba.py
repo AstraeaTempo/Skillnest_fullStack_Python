@@ -82,8 +82,6 @@ def mostrar():
     listaNombres = filtrar(nombres)
     print(f"los nombres con mas de 5 letras son: \n- {("\n").join(listaNombres)}")
 
-mostrar()
-
 #Ejercicio 4-------------------------------------------------------------------------------------------
 
 def listaNotas(notas):
@@ -108,7 +106,6 @@ def notis():
         if inp != "":
             nota.append(inp)
     print(listaNotas(nota))
-notis()
 
 #Ejercicio 5-------------------------------------------------------------------------------------------
 
@@ -126,7 +123,6 @@ def valores():
         valorProducto = float(input("Ingrese el valor del producto:\n"))
         listaPrecios.append(valorProducto)
     descuento(listaPrecios)
-valores()
 
 #Ejercicio 6-------------------------------------------------------------------------------------------
 
@@ -141,15 +137,45 @@ def par_impar(numero):
 def recibirNum():
     num = int(input("Ingrese un número: "))
     par_impar(num)
-recibirNum()
 
 #Ejercicio 7-------------------------------------------------------------------------------------------
 
+def edades(lista):
+    num = 0
+    for i in range(len(lista)):
+        if lista[i] >= 18:
+            num += 1
+    return num
 
+def personas():
+    edad = []
+    inp = int(input("Cuantas personas van a ingresar hoy?: "))
+    for i in range(inp):
+        var = int(input(">> "))
+        if var !="":
+            edad.append(var)
+        else:
+            print("Por favor ingresar valor valido")
+    resultado = edades(edad)
+    print(f"Hay {resultado} personas mayores de edad")
 
 #Ejercicio 8-------------------------------------------------------------------------------------------
 
+def vecesqAparece(palabras):
+    buscar = input("Ingrese la palabra que desea buscar: ")
+    vecesqAparece = 0
+    for i in range(len(palabras)):
+        if buscar == palabras[i]:
+            vecesqAparece += 1
+    print(f"La palabra {buscar} aparece {vecesqAparece} en la lista")
 
+def recibirpalabras():
+    cantidad = int/input("Ingrese la cantidad de palabras: ")
+    listaPalabras = []
+    for i in range(cantidad):
+        palabra = input(f"{i + 1}. ")
+        listaPalabras.append(palabra)
+    vecesqAparece(listaPalabras)
 
 #Ejercicio 9-------------------------------------------------------------------------------------------
 
@@ -207,10 +233,10 @@ while continuar:
         recibirNum()
     elif opcion == "7":
         print("\n--------- Mayor de 18 años ---------")
-        ()
+        personas()
     elif opcion == "8":
         print("\n--------- Palabra específica ---------")
-        ()
+        recibirpalabras()
     elif opcion == "9":
         print("\n--------- Lista con números positivos ---------")
         ()
