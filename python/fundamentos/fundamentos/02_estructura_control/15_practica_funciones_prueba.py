@@ -65,10 +65,30 @@ def vocal():
 
 #Ejercicio 3-------------------------------------------------------------------------------------------
 
-def t():
-    pass
+def filtrar(lista):
+    resultado = []
+    for nombre in lista:
+        if len(nombre) >5:
+            resultado.append(nombre)
+    return resultado
+
+def mostrar():
+    nombres = []
+    nombreLargos = []
+    cantidad = int(input("¿Cuántos nombres quiere ingresar?: "))
+    for i in range(cantidad):
+        nombre = input("Ingrese un nombre: ")
+        print(f"{nombre} agregado con exito a la lista.")
+        nombres.append(nombres)
+    for nombre in filtrar(nombres):
+        nombreLargos.append(nombre)
+    print(f"Los nombres con más de 5 letras son: ")
+mostrar()
 
 #Ejercicio 4-------------------------------------------------------------------------------------------
+
+def t():
+    pass
 
 def t():
     pass
@@ -78,7 +98,13 @@ def t():
 def t():
     pass
 
+def t():
+    pass
+
 #Ejercicio 6-------------------------------------------------------------------------------------------
+
+def t():
+    pass
 
 def t():
     pass
@@ -88,7 +114,13 @@ def t():
 def t():
     pass
 
+def t():
+    pass
+
 #Ejercicio 8-------------------------------------------------------------------------------------------
+
+def t():
+    pass
 
 def t():
     pass
@@ -98,11 +130,16 @@ def t():
 def t():
     pass
 
+def t():
+    pass
+
 #Ejercicio 10------------------------------------------------------------------------------------------
 
 def t():
     pass
 
+def t():
+    pass
 
 # Requisitos obligatorios Su trabajo debe cumplir con lo siguiente:
 
@@ -139,7 +176,7 @@ while continuar:
         vocal()
     elif opcion == "3":
         print("\n--------- Nombres con más de 5 letras ---------")
-        ()
+        mostrar()
     elif opcion == "4":
         print("\n--------- Notas: Apruebas o Repruebas ---------")
         ()
