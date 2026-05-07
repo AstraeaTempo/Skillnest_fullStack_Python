@@ -247,3 +247,9 @@ class Usuario:
         self.email = email
         self.limite_credito = 30000
         self.saldo_pagar = 0
+
+
+    Metodo de instancia tiene "SELF"
+    CLS es para la clase
+
+    @staticmethod es de parametros
