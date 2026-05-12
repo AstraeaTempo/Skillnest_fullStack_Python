@@ -49,7 +49,6 @@ u2 = suscripcionStreaming("Sasaki", "Premium")
 u2.ver_contenido_exclusivo()
 u2.cambiar_suscripcion("Premium")
 u2.realizar_pago(6.00)
-u2.realizar_pago(10.00)
 u2.mostrar_info_suscripcion()
 
 print("--- HORI INFO ---")
