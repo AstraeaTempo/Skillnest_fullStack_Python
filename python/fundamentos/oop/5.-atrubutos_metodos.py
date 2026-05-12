@@ -13,6 +13,7 @@ class Estudiante:
         #Atributos de instancia
         self.nombre = nombre
         self.nota = nota
+        
 
         #Agregar elementos a lista Estudiante (objeto)
         Estudiante.estudiantes.append(self)
