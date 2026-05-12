@@ -7,7 +7,7 @@ class suscripcionStreaming:
         self.tipo_suscripcion = tipo_suscripcion
         self.costo_mensual = self.costos_suscripcion[tipo_suscripcion]
         self.saldo_pendiente = self.costo_mensual
-        print()
+
 #-------------------------------------------------------------------------
     def realizar_pago(self, monto):
         self.saldo_pendiente = self.saldo_pendiente - monto
@@ -20,14 +20,14 @@ class suscripcionStreaming:
         self.costo_mensual = self.costos_suscripcion[nuevo_tipo]
         self.saldo_pendiente = self.saldo_pendiente + self.costo_mensual
         print("Cambio de plan a:", nuevo_tipo)
-        print()
+
 #-------------------------------------------------------------------------
     def ver_contenido_exclusivo(self):
         if self.tipo_suscripcion == "Gratis":
             print("Acceso denegado")
         else:
             print("Acceso permitido para", self.usuario)
-            print()
+
 #-------------------------------------------------------------------------
     def mostrar_info_suscripcion(self):
         print("Nombre:", self.usuario)
