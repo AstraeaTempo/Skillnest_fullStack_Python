@@ -88,7 +88,6 @@ print(Estudiante.aprobar(e2.nota))
 print(f"¿{e3.nombre} Aprueba?")
 print(Estudiante.aprobar(e3.nota))
 
-
 #----------------------------------------------------------------------------------
 
 ## Función repaso.
