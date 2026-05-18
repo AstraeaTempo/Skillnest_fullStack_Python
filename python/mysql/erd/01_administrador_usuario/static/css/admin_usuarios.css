@@ -1,0 +1,138 @@
+/* Configuración básica de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Contenedor del panel */
+.dashboard-container {
+    width: 100%;
+    max-width: 850px;
+    background-color: #ffffff;
+    padding: 30px;
+    position: relative; /* Necesario para ubicar el post-it */
+    min-height: 500px;
+}
+
+/* Header que posiciona el botón a la derecha */
+.dashboard-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 25px;
+}
+
+/* Botón "Nuevo Usuario" con sombra sólida */
+.btn-nuevo {
+    background-color: #ffffff;
+    border: 3px solid #000000;
+    padding: 8px 18px;
+    font-size: 1.05rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px #000000;
+    transition: transform 0.05s, box-shadow 0.05s;
+}
+
+.btn-nuevo:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #000000;
+}
+
+/* Estilos de la Tabla */
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid #000000;
+}
+
+.user-table th, 
+.user-table td {
+    border: 2px solid #000000;
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 1.1rem;
+}
+
+/* Encabezados de la tabla con gris claro */
+.user-table th {
+    background-color: #e0e0e0;
+    font-weight: 600;
+}
+
+/* Filas alternas intercaladas (cebra) */
+.user-table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.user-table tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+/* Contenedor de iconos de acción */
+.actions-cell {
+    display: flex;
+    gap: 15px;
+    font-size: 1.3rem;
+}
+
+.action-icon {
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.1s;
+}
+
+.action-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Nota adhesiva (Post-it) en la esquina inferior derecha */
+.post-it {
+    position: absolute;
+    bottom: -20px;
+    right: 40px;
+    width: 220px;
+    background-color: #ffd966;
+    border: 1px solid #e6b800;
+    padding: 25px 15px 15px 15px;
+    box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: bold;
+    line-height: 1.4;
+    transform: rotate(1deg);
+}
+
+/* Cinta adhesiva roja del Post-it */
+.tape {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 22px;
+    background-color: #e05345;
+    opacity: 0.9;
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 650px) {
+    .user-table th, .user-table td {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+    .post-it {
+        position: static;
+        margin: 40px auto 0 auto;
+    }
+}

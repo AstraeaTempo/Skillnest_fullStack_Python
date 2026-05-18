@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Usuario</title>
+    <link rel="stylesheet" href="../static/css/editar_usuario.css">
+</head>
+<body>
+
+    <main class="main-container">
+
+        <section class="form-container">
+            <h2>Editar Usuario</h2>
+            
+            <form id="form-editar-usuario" action="#" method="POST">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" value="Patricia" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" value="patricia@codingdojo.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" value="secretpassword123" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="conf-password">Conf. Contraseña</label>
+                    <input type="password" id="conf-password" name="conf-password" value="secretpassword123" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="tipo-usuario">Tipo de Usuario</label>
+                    <div class="select-wrapper">
+                        <select id="tipo-usuario" name="tipo-usuario" required>
+                            <option value="Administrador" selected>Administrador</option>
+                            <option value="Usuario">Usuario</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="button-container">
+                    <button type="submit" class="btn-crear">Crear</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="../static/js/editar_usuario.js"></script>
+</body>
+</html>

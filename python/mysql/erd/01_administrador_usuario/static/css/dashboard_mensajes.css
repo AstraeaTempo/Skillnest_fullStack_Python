@@ -1,0 +1,122 @@
+/* Reseteo estándar y tipografía limpia */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Caja contenedora del Dashboard */
+.dashboard-container {
+    width: 100%;
+    max-width: 850px;
+    background-color: #ffffff;
+    padding: 30px;
+    position: relative;
+    min-height: 480px;
+}
+
+/* Espaciado del header */
+.dashboard-header {
+    height: 35px;
+    margin-bottom: 20px;
+}
+
+/* Estilo rústico de la tabla */
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid #000000;
+}
+
+.user-table th, 
+.user-table td {
+    border: 2px solid #000000;
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 1.1rem;
+}
+
+/* Encabezados con fondo gris de esquema */
+.user-table th {
+    background-color: #e0e0e0;
+    font-weight: 600;
+}
+
+/* Filas intercaladas */
+.user-table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.user-table tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+/* Celda de acción única (Mensaje) */
+.actions-cell {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 10px;
+}
+
+.action-icon {
+    font-size: 1.4rem;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.1s ease;
+}
+
+.action-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Nota adhesiva amarilla (Post-it) en la esquina inferior derecha */
+.post-it {
+    position: absolute;
+    bottom: -25px;
+    right: 40px;
+    width: 210px;
+    background-color: #ffd966;
+    border: 1px solid #e6b800;
+    padding: 25px 15px 15px 15px;
+    box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: bold;
+    line-height: 1.4;
+    transform: rotate(1.5deg);
+}
+
+/* Cinta adhesiva decorativa roja */
+.tape {
+    position: absolute;
+    top: -11px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65px;
+    height: 20px;
+    background-color: #e05345;
+    opacity: 0.9;
+}
+
+/* Adaptabilidad a entornos móviles */
+@media (max-width: 650px) {
+    .user-table th, .user-table td {
+        padding: 9px;
+        font-size: 0.9rem;
+    }
+    .post-it {
+        position: static;
+        margin: 40px auto 0 auto;
+        transform: none;
+    }
+}

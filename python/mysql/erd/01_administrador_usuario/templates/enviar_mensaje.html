@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe - Administración de Usuarios</title>
+    <link rel="stylesheet" href="../static/css/enviar_mensaje.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="browser-container">
+        <div class="browser-header">
+            <div class="nav-buttons">
+                <span class="icon">&larr;</span>
+                <span class="icon">&rarr;</span>
+                <span class="icon">&times;</span>
+                <span class="icon">&#8962;</span>
+            </div>
+            <div class="address-bar">
+                <input type="text" value="https://localhost/dashboard/adm" readonly>
+            </div>
+            <div class="search-bar">
+                <div class="search-icon-box">
+                    <span class="search-icon">&#9094;</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-content">
+            <h1 class="main-title">Andrea</h1>
+            <h2 class="section-title">Mensajes a Andrea</h2>
+            
+            <div class="input-group">
+                <input type="text" id="message-input" class="sketch-input">
+                <button id="send-message" class="sketch-button">Enviar</button>
+            </div>
+
+            <div class="messages-container">
+                <div class="message-item">
+                    <a href="#" class="meta-link">Mensaje de Katya, hace 5 horas</a>
+                    <p class="lorem-text">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+
+            <h2 class="sub-section-title">Comentarios</h2>
+            
+            <div class="comments-container" id="comments-list">
+                <div class="comment-item">
+                    <a href="#" class="meta-link-comment">Comentario de Patricia, hace 1 hora</a>
+                    <p class="lorem-text text-indented">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+
+            <div class="input-group comment-form-group">
+                <input type="text" id="comment-input" class="sketch-input" placeholder="Escribe un comentario...">
+                <button id="send-comment" class="sketch-button">Enviar</button>
+            </div>
+        </div>
+
+        <div class="browser-footer">
+            <div class="resize-handle">//</div>
+        </div>
+    </div>
+
+    <script src="../static/js/enviar_mensaje.js"></script>
+</body>
+</html>
