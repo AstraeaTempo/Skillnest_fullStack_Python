@@ -1,0 +1,110 @@
+/* Reseteo básico y tipografía */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Contenedor principal de dos columnas */
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 900px;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    gap: 50px;
+}
+
+/* Estilos de las secciones de los formularios */
+.form-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #000;
+}
+
+/* Alineación de etiquetas e inputs */
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.form-group label {
+    width: 140px; /* Espacio fijo para que los inputs queden alineados */
+    font-size: 1.1rem;
+    color: #333;
+    padding-right: 10px;
+}
+
+.form-group input {
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 2px solid #000000;
+    border-radius: 4px;
+    outline: none;
+    background-color: #fff;
+}
+
+/* Botones con el estilo de sombra del boceto */
+.btn {
+    align-self: flex-end; /* Alinea el botón a la derecha como en el dibujo */
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px #000000; /* Efecto de sombra sólida */
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+/* Efecto de click en el botón */
+.btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0px #000000;
+}
+
+/* Responsivo: Si la pantalla es pequeña, se apilan uno abajo del otro */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .form-group label {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    
+    .btn {
+        width: 100%; /* El botón ocupa todo el ancho en móviles */
+    }
+}
