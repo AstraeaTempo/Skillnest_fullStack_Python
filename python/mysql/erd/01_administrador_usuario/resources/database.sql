@@ -42,7 +42,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sistema_mensajes`.`usuarios` (
     `id_usuario` INT NOT NULL AUTO_INCREMENT,
-    `nombre` VARCHAR(100) NOT NULL,
+    `nombre_user` VARCHAR(100) NOT NULL,
     `email` VARCHAR(150) NOT NULL,
     `password_hash` VARCHAR(255) NOT NULL,
     `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -114,3 +114,11 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- Incertar datos en tablas
+USE sistema_mensajes;
+
+INSERT INTO roles(nombre_rol, descripcion_rol) 
+VALUES ()
+INSERT INTO usuarios(nombre_user) 
+VALUES ()
