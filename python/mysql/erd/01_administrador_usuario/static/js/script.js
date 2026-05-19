@@ -1,35 +1,88 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Vistas principales
-    const authView = document.getElementById("auth-view");
-    const adminView = document.getElementById("admin-view");
+document.addEventListener('DOMContentLoaded', function () {
 
-    // Formularios
-    const loginForm = document.getElementById("login-form");
-    const registerForm = document.getElementById("register-form");
+    // --- 1. MOSTRAR / OCULTAR CONTRASEÑAS ---
+    
+    // Configuración para el Login
+    const togglePassword = document.querySelector('#togglePassword');
+    const loginPasswordInput = document.querySelector('#login-password');
 
-    // Evento al presionar "Iniciar Sesión"
-    loginForm.addEventListener("submit", (e) => {
-        e.preventDefault(); // Evita que la página se recargue
+    if (togglePassword && loginPasswordInput) {
+        togglePassword.addEventListener('click', function () {
+            const type = loginPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            loginPasswordInput.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        });
+    }
 
-        // Aquí podrías validar credenciales si lo necesitas
-        authView.classList.add("hidden");  // Oculta login/registro
-        adminView.classList.remove("hidden"); // Muestra la tabla del dashboard
-    });
+    // Configuración para el Registro
+    const toggleRegPassword = document.querySelector('#toggleRegPassword');
+    const regPasswordInput = document.querySelector('#reg-password');
 
-    // Evento al presionar "Registrar"
-    registerForm.addEventListener("submit", (e) => {
-        e.preventDefault(); // Evita que la página se recargue
+    if (toggleRegPassword && regPasswordInput) {
+        toggleRegPassword.addEventListener('click', function () {
+            const type = regPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            regPasswordInput.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        });
+    }
 
-        // Validación simple de contraseñas idénticas
-        const pass = document.getElementById("reg-password").value;
-        const confirmPass = document.getElementById("reg-confirm").value;
 
-        if (pass !== confirmPass) {
-            alert("Las contraseñas no coinciden.");
-            return;
-        }
+    // --- 2. VALIDACIÓN E INGRESO DE FORMULARIOS ---
 
-        authView.classList.add("hidden");
-        adminView.classList.remove("hidden");
-    });
+    // Definimos la página común a la que irán ambos botones
+    const destinoUrl = 'templates/admin_usuarios.html';
+
+    // Función auxiliar para validar correos institucionales
+    function esCorreoInstitucional(email) {
+        return email.endsWith('@liceovvh.cl') || email.endsWith('@comeduc.cl');
+    }
+
+
+    // CONTROLADOR DEL FORMULARIO DE INICIO DE SESIÓN
+    const loginForm = document.getElementById('loginForm');
+    if (loginForm) {
+        loginForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const email = document.getElementById('login-email').value.trim();
+            
+            if (!esCorreoInstitucional(email)) {
+                alert('Correo no válido. Solo se permiten correos institucionales.');
+                return;
+            }
+
+            // Si todo está bien, redirige y limpia
+            window.location.href = destinoUrl;
+            loginForm.reset();
+        });
+    }
+
+
+    // CONTROLADOR DEL FORMULARIO DE REGISTRO
+    const registerForm = document.getElementById('registerForm');
+    if (registerForm) {
+        registerForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const email = document.getElementById('reg-email').value.trim();
+            const password = document.getElementById('reg-password').value;
+            const confirmPassword = document.getElementById('reg-confirm').value;
+
+            // Validación de correo institucional
+            if (!esCorreoInstitucional(email)) {
+                alert('Correo no válido. Solo se permiten correos institucionales para el registro.');
+                return;
+            }
+
+            // Validación extra para el registro: verificar que las contraseñas coincidan
+            if (password !== confirmPassword) {
+                alert('Las contraseñas no coinciden. Por favor, verifícalas.');
+                return;
+            }
+
+            // Si pasa los filtros, te manda a la misma página
+            window.location.href = destinoUrl;
+            registerForm.reset();
+        });
+    }
 });

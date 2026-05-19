@@ -18,11 +18,14 @@ function renderizarTabla() {
             <td>${usuario.email}</td>
             <td>${usuario.tipo}</td>
             <td>
-                <div class="actions-cell">
-                    <span class="action-icon" title="Enviar Mensaje" onclick="abrirMensajero('${usuario.email}')">✉️</span>
-                </div>
+                <button class="btn-action btn-message" style="cursor:pointer; margin-right:5px; background:none; border:none;">💬 Mensaje</button>
             </td>
         `;
+
+        fila.querySelector('.btn-message').addEventListener('click', () => {
+                // Redirige al formulario de envío de mensajes
+                window.location.href = 'enviar_mensaje.html';
+            });
 
         tbody.appendChild(fila);
     });

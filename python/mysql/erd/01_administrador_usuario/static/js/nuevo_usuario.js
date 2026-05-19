@@ -1,23 +1,28 @@
-document.getElementById('form-nuevo-usuario').addEventListener('submit', function(event) {
-    // Evita que la página se recargue automáticamente al enviar
-    event.preventDefault();
-
-    // Captura de los valores de los inputs
-    const nombre = document.getElementById('nombre').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value;
-    const confPassword = document.getElementById('conf-password').value;
-    const tipoUsuario = document.getElementById('tipo-usuario').value;
-
-    // Validación básica: que las contraseñas coincidan
-    if (password !== confPassword) {
-        alert('Error: Las contraseñas no coinciden.');
-        return;
-    }
-
-    // Simulación de éxito de creación de datos
-    alert(`¡Usuario creado con éxito!\n\nNombre: ${nombre}\nE-mail: ${email}\nTipo: ${tipoUsuario}`);
+document.addEventListener('DOMContentLoaded', function () {
     
-    // Opcional: Limpiar el formulario tras la creación exitosa
-    this.reset();
+    // Capturamos el formulario por su ID único
+    const formNuevoUsuario = document.getElementById('form-nuevo-usuario');
+
+    if (formNuevoUsuario) {
+        formNuevoUsuario.addEventListener('submit', function (e) {
+            // Evitamos el comportamiento nativo que recarga la página
+            e.preventDefault();
+
+            // Obtenemos los valores de las contraseñas introducidas
+            const password = document.getElementById('password').value;
+            const confPassword = document.getElementById('conf-password').value;
+
+            // Validación de seguridad elemental
+            if (password !== confPassword) {
+                alert('Las contraseñas no coinciden. Por favor, revísalas e inténtalo de nuevo.');
+                return; // Detiene el flujo de la redirección si falla
+            }
+
+            // Alerta visual de confirmación para el desarrollador/usuario
+            alert('¡Usuario creado correctamente!');
+            
+            // Redirección al archivo solicitado dentro de la carpeta templates
+            window.location.href = 'dashboard_mensajes.html';
+        });
+    }
 });

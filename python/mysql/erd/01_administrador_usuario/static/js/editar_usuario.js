@@ -1,20 +1,28 @@
-document.getElementById('form-nuevo-usuario').addEventListener('submit', function(event) {
-    // Evita la recarga automática del envío predeterminado
-    event.preventDefault();
+document.addEventListener('DOMContentLoaded', function () {
+    
+    // Buscamos el formulario de edición por su ID
+    const formEditar = document.getElementById('form-editar-usuario');
 
-    // Captura de datos modificados
-    const nombre = document.getElementById('nombre').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value;
-    const confPassword = document.getElementById('conf-password').value;
-    const tipoUsuario = document.getElementById('tipo-usuario').value;
+    if (formEditar) {
+        formEditar.addEventListener('submit', function (e) {
+            // Evitamos que la página se recargue inmediatamente
+            e.preventDefault();
 
-    // Validación de seguridad de contraseñas
-    if (password !== confPassword) {
-        alert('Error: Las contraseñas ingresadas no coinciden.');
-        return;
+            // Capturamos las contraseñas para verificar que coincidan
+            const password = document.getElementById('password').value;
+            const confPassword = document.getElementById('conf-password').value;
+
+            // Validación: Verificar que las contraseñas coincidan antes de avanzar
+            if (password !== confPassword) {
+                alert('Las contraseñas no coinciden. Por favor, verifícalas antes de guardar.');
+                return; // Detiene el código si hay error
+            }
+
+            // Si pasa la validación, confirmamos el éxito y redirigimos
+            alert('¡Usuario actualizado con éxito!');
+            
+            // Redirección al archivo deseado (asumiendo que están en la misma carpeta templates)
+            window.location.href = 'dashboard_mensajes.html';
+        });
     }
-
-    // Ventana emergente simulando la persistencia de datos cambiados
-    alert(`¡Usuario actualizado correctamente!\n\nNuevos datos registrados:\n• Nombre: ${nombre}\n• E-mail: ${email}\n• Rol del sistema: ${tipoUsuario}`);
 });

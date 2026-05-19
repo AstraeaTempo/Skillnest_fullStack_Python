@@ -1,56 +1,61 @@
-// Arreglo de datos que simula la base de datos de usuarios
-const usuarios = [
-    { nombre: "Patricia", email: "patricia@codingdojo.com", tipo: "Admin" },
-    { nombre: "Andrea", email: "andrea@codingdojo.com", tipo: "Usuario" },
-    { nombre: "Katya", email: "katya@codingdojo.com", tipo: "Usuario" }
-];
+document.addEventListener('DOMContentLoaded', function () {
 
-// Función para renderizar la lista de usuarios en la tabla HTML
-function cargarUsuarios() {
-    const tableBody = document.getElementById("user-table-body");
-    tableBody.innerHTML = ""; // Limpiar contenido previo
-
-    usuarios.forEach((usuario, index) => {
-        const row = document.createElement("tr");
-
-        row.innerHTML = `
-            <td>${usuario.nombre}</td>
-            <td>${usuario.email}</td>
-            <td>${usuario.tipo}</td>
-            <td>
-                <div class="actions-cell">
-                    <span class="action-icon" title="Editar" onclick="editarUsuario(${index})">✏️</span>
-                    <span class="action-icon" title="Borrar" onclick="borrarUsuario(${index})">🗑️</span>
-                    <span class="action-icon" title="Mensaje" onclick="enviarMensaje(${index})">✉️</span>
-                </div>
-            </td>
-        `;
-
-        tableBody.appendChild(row);
-    });
-}
-
-// Evento para el botón "Nuevo Usuario"
-document.getElementById("btn-nuevo").addEventListener("click", () => {
-    alert("Acción: Crear un nuevo usuario");
-});
-
-// Funciones interactivas para simular los botones de acciones
-function editarUsuario(index) {
-    alert(`Editar al usuario: ${usuarios[index].nombre}`);
-}
-
-function borrarUsuario(index) {
-    const confirmar = confirm(`¿Estás seguro de que deseas borrar a ${usuarios[index].nombre}?`);
-    if (confirmar) {
-        usuarios.splice(index, 1); // Remover del arreglo
-        cargarUsuarios(); // Volver a pintar la tabla
+    // --- 1. REDIRECCIÓN DEL BOTÓN NUEVO USUARIO ---
+    const btnNuevo = document.getElementById('btn-nuevo');
+    
+    if (btnNuevo) {
+        btnNuevo.addEventListener('click', function () {
+            window.location.href = 'nuevo_usuario.html';
+        });
     }
-}
 
-function enviarMensaje(index) {
-    alert(`Enviar correo electrónico a: ${usuarios[index].email}`);
-}
+    // --- 2. CARGA DINÁMICA DE USUARIOS ---
+    const tableBody = document.getElementById('user-table-body');
 
-// Inicializar la carga al abrir la página
-window.onload = cargarUsuarios;
+    // Lista simulada de usuarios
+    const usuariosDemo = [
+        { nombre: 'Juan Pérez', email: 'juan.perez@liceovvh.cl', tipo: 'Administrador' },
+        { nombre: 'María Rossi', email: 'maria.rossi@comeduc.cl', tipo: 'Docente' },
+        { nombre: 'Diego Silva', email: 'diego.silva@liceovvh.cl', tipo: 'Estudiante' }
+    ];
+
+    if (tableBody) {
+        tableBody.innerHTML = ''; // Limpiamos la tabla
+
+        usuariosDemo.forEach(usuario => {
+            const fila = document.createElement('tr');
+
+            // Insertamos los datos y los tres botones en la celda de acciones
+            fila.innerHTML = `
+                <td>${usuario.nombre}</td>
+                <td>${usuario.email}</td>
+                <td>${usuario.tipo}</td>
+                <td>
+                    <button class="btn-action btn-edit" style="cursor:pointer; margin-right:5px; background:none; border:none;">✏️ Editar</button>
+                    <button class="btn-action btn-delete" style="cursor:pointer; color:red; background:none; border:none;">🗑️ Eliminar</button>
+                    <button class="btn-action btn-message" style="cursor:pointer; margin-right:5px; background:none; border:none;">💬 Mensaje</button>
+                </td>
+            `;
+
+            // Acción: Enviar Mensaje
+            fila.querySelector('.btn-message').addEventListener('click', () => {
+                // Redirige al formulario de envío de mensajes
+                window.location.href = 'enviar_mensaje.html';
+            });
+
+            // Acción: Editar Usuario
+            fila.querySelector('.btn-edit').addEventListener('click', () => {
+                window.location.href = 'editar_usuario.html';
+            });
+
+            // Acción: Eliminar Usuario
+            fila.querySelector('.btn-delete').addEventListener('click', () => {
+                if (confirm(`¿Estás seguro de que deseas eliminar a ${usuario.nombre}?`)) {
+                    fila.remove();
+                }
+            });
+
+            tableBody.appendChild(fila);
+        });
+    }
+});
