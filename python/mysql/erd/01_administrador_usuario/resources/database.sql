@@ -119,6 +119,15 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 USE sistema_mensajes;
 
 INSERT INTO roles(nombre_rol, descripcion_rol) 
-VALUES ()
-INSERT INTO usuarios(nombre_user) 
-VALUES ()
+VALUES ("admin", "control_total", 
+"usuario comun", "sin permisos", 
+"invitado", "usuario temporal con permisos limitados")
+
+INSERT INTO usuarios(nombre_user, password_hash, email, id_rol) 
+VALUES ("randy123", "randy123", "randy@gmail.com", 2),
+("akon123", "akon123", "akon@gmail.com", 1),
+("tete", "tete", "tete@gmail.com", 2),
+("anne", "anne", "anne@gmail.com", 3),
+("martin", "martin", "martin@gmail.com", 3);
+SELECT * from roles;
+SELECT * from usuarios;
