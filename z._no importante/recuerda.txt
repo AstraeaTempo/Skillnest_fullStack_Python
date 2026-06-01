@@ -253,3 +253,6 @@ class Usuario:
     CLS es para la clase
 
     @staticmethod es de parametros
+
+
+My SQL
