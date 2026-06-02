@@ -1,3 +1,4 @@
+# Usuario-------------------------------------------------------------
 class Usuario:
     usuarios = []
     
@@ -14,7 +15,7 @@ class Usuario:
         print(f"Password: {self.password_hash}")
         print(f"Tipo usuario: {self.tipo_usuario}")
 
-#------------------------------------------------------------------------------------------------------
+# Pedido -------------------------------------------------------------
 
 class Pedido:
     pedidos = []
@@ -26,7 +27,7 @@ class Pedido:
         def pedidos_realizados():
             pass #por mientras
 
-#------------------------------------------------------------------------------------------------------
+# Pelicula -----------------------------------------------------------
 
 class Pelicula:
     peliculas = []
@@ -40,15 +41,15 @@ class Pelicula:
         self.formato = formato
         Pelicula.peliculas.append(self.titulo)
 
-    def movie_available(self, titulo, stock):
-        if titulo:
+    def movie_available(self, book_title, stock):
+        if book_title:
             print(f"La pelicula {self.titulo} esta '{self.stock}'")
             print(f"Titulo: {self.titulo}")
             print(f"Formato: {self.formato}")
-            print(f"Stock: {self.stock}")
+            return True
         else:
             print(f"Titulo no encontrado {self.titulo}")
-
-    def mostrar():
-        titulo = input("que pelicula busca?: ")
-        movie_available(self, titulo, stock)
+            print(f"Stock: {self.stock}")
+            return False
+        
+    
