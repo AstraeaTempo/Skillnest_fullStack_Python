@@ -194,17 +194,13 @@ VALUES("Usuario", "Acceso básico.", 1),
 INSERT INTO Usuarios(id_tipo_usuario, username, email, password_hash, created_by)
 VALUES(2, "SuperDONO17", "donovansaez@liceovvh.cl", "JAOSF)=/JF", 1),
 (1, "IncrediJavi", "javierazapata@liceovvh.cl", "nsKSJ=(/!/%", 1),
-(1, "MegaDav", "davidtobar@liceovvh.cl", "NAu9!)47", 1),
-(1, "igpena", "ignaciopena@liceovvh.cl", "h1b3tnt4yn", 1),
-(1, "bustasebas", "sebastianbustamante@liceovvh.cl", "AK81(/%#75", 1);
+(1, "MegaDav", "davidtobar@liceovvh.cl", "NAu9!)47", 1);
 
 -- Pedidos
 INSERT INTO pedidos(id_usuario, precio_total, created_by)
 VALUES(1, 19.97, 1),
 (2, 15.99, 1),
-(3, 26.98, 1),
-(4, 40.96, 1),
-(5, 20.99, 1);
+(3, 26.98, 1);
 
 -- Detalles pedidos
 INSERT INTO detalles_pedidos(id_pedido, id_pelicula)
@@ -213,12 +209,7 @@ VALUES(1, 1),
 (1, 3),
 (2, 4),
 (3, 1),
-(3, 5),
-(4, 1),
-(4, 2),
-(4, 3),
-(4, 5),
-(5, 5);
+(3, 5);
 
 -- -----------------------------------------------------
 -- Select data

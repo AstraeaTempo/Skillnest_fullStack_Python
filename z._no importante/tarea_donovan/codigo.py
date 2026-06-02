@@ -7,21 +7,34 @@ class Usuario:
         self.email = email
         self.password_hash = password
         self.tipo_usuario = tipo_usuario
+        self.saldo_pendiente = 0
         Usuario.usuarios.append(self.username)
-
-    def info_user (self):
-        print(f"Nombre: {self.username}")
-        print(f"Gmail: {self.email}")
-        print(f"Password: {self.password_hash}")
-        print(f"Tipo usuario: {self.tipo_usuario}")
+        
+    def realizar_pedido(self, pelicula, cantidad):
+        pass
+    
+    def pagar_saldo(self, monto):
+        pass
+    
+    def cambiar_contrasena(self, nueva_contrasena):
+        pass
+    
+    def mostrar_usuarios(self):
+        print("Imprimiendo información del usuario...")
+        print(f"Nombre de usuario: {self.username}")
+        print(f"Email: {self.username}")
+        print(f"Tipo de usuario: {self.tipo_usuario}")
+        print(f"Saldo pendiente: {self.saldo_pendiente}")
 
 # Pedido -------------------------------------------------------------
 
 class Pedido:
     pedidos = []
 
-    def __init__(self, usuario):
+    def __init__(self, usuario, detalle_pedido, pelicula):
         self.usuario = usuario
+        self.detalle_pedido = detalle_pedido
+        self.pelicula = pelicula
         Pedido.pedidos.append(self.usuario)
 
         def pedidos_realizados():
@@ -40,16 +53,21 @@ class Pelicula:
         self.precio_unitario = precio_unitario
         self.formato = formato
         Pelicula.peliculas.append(self.titulo)
-
-    def movie_available(self, book_title, stock):
-        if book_title:
-            print(f"La pelicula {self.titulo} esta '{self.stock}'")
-            print(f"Titulo: {self.titulo}")
-            print(f"Formato: {self.formato}")
-            return True
-        else:
-            print(f"Titulo no encontrado {self.titulo}")
-            print(f"Stock: {self.stock}")
-            return False
         
+    def actualizar_stock(self, cantidad):
+        pass
     
+    def restaurar_pelicula(self):
+        pass
+    
+    def mostrar_info_pelicula(self):
+        print("Mostrando información de la película...")
+        print(f"Título: {self.titulo}")
+        print(f"Año de publicación: {self.anio}")
+        print(f"Formato: {self.formato}")
+        print(f"Estado de restauración: {self.estado_restauracion}")
+        print(f"Stock: {self.stock}")
+        print(f"Precio unitario: {self.precio_unitario}")
+
+    def j():
+        pass
