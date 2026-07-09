@@ -10,5 +10,13 @@ def hola_mundo():
 def nosotros():
     return "¡conocenos mejor!"
 
+@app.route("/shalki")
+def shalki():
+    return "que ella no te vea"
+
+@app.route("/jestty")
+def jestty():
+    return "¡Los demás te escondieron muy bien… ¡No podía encontrarte y ya me estaba desesperando JA!"
+
 if __name__ == "__main__":
     app.run(debug=True)
