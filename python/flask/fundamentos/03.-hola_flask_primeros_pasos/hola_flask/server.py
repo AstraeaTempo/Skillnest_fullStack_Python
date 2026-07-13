@@ -12,7 +12,7 @@ def nosotros():
 
 @app.route("/shalki")
 def shalki():
-    return "que ella no te vea"
+    return "viva la vida!"
 
 @app.route("/jestty")
 def jestty():
