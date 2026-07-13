@@ -23,8 +23,8 @@ def repite(veces, mensaje):
     return f"Repite después de mí: {mensaje}. " * veces
 
 # BONUS: Página de error personalizada si el usuario ingresa una ruta inexistente ----5
-@app.route("/error")
-def error():
+@app.route("/error404")
+def error404():
     return "⚠️ ¡Error! no se a encontrado lo que buscas, por favor ingrese una de las ya existentes."
 
 # Ejecuta el servidor
