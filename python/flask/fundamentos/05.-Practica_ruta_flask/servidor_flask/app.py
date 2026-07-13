@@ -25,7 +25,7 @@ def repite(veces, mensaje):
 # BONUS: Página de error personalizada si el usuario ingresa una ruta inexistente ----5
 @app.route("/error")
 def error():
-    return "⚠️ ¡Sobrecarga de rutas! No encontramos a dónde quieres ir, inténtalo de nuevo."
+    return "⚠️ ¡Error! no se a encontrado lo que buscas, por favor ingrese una de las ya existentes."
 
 # Ejecuta el servidor
 if __name__ == "__main__":
