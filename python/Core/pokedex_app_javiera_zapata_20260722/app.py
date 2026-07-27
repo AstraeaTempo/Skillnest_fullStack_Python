@@ -68,4 +68,4 @@ def pokemon_no_encontrado(mensaje: str):
 if __name__ == "__main__":
     app.run(debug=True)
 
-#sorry but this doesn´t work
+#sorry but this doesn´t work (for me)
