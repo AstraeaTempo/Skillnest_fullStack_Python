@@ -1,8 +1,9 @@
+#Inicio.-----------------------------------------------------------------------------------------------------
 from flask import Flask, render_template
 
 app = Flask(__name__)
 
-# Base de datos ficticia de Pokémon
+#Pokemons----------------------------------------------------------------------------------------------------
 pokedex = [
     {"id": 1, "nombre": "Bulbasaur", "tipo": "Planta/Veneno", "imagen": "bulbasaur.png", "poder": 45, "altura": "0.7m", "peso": "6.9kg"},
     {"id": 4, "nombre": "Charmander", "tipo": "Fuego", "imagen": "charmander.png", "poder": 39, "altura": "0.6m", "peso": "8.5kg"},
@@ -17,18 +18,54 @@ pokedex = [
 ]
 
 
-# Ruta para mostrar todos los Pokémon
+#1-Ruta que muestra todos los pokemons-----------------------------------------------------------------------
+@app.route("/")
+@app.route("/pokemon")
+def index():
+    return render_template(
+        "pokemon.html", 
+        pokemons=pokedex, 
+        titulo="Pokédex"
+    )
 
-# Ruta para mostrar un Pokémon por nombre
+#2-Muestra una cantidad especifica---------------------------------------------------------------------------
+@app.route("/pokemon/cantidad/<int:cantidad>")
+def limite_pokemon(cantidad):
+    return render_template(
+        "pokemon.html", 
+        pokemons=pokedex[:cantidad], 
+        titulo=f"Primeros {cantidad} Pokémon"
+    )
 
-# Ruta para mostrar un Pokémon por número en la Pokédex
+#3-Muestra pokemon con ID------------------------------------------------------------------------------------
+@app.route("/pokemon/<int:id>")
+def pokemon_por_id(id):
+    pokemon = next((p for p in pokedex if p["id"] == id), None)
+    if not pokemon:
+        return pokemon_no_encontrado(f"No se encontró ningún Pokémon con el ID #{id}.")
+    return render_template(
+        "pokemon.html",
+        pokemon=pokemon,
+        titulo=pokemon["nombre"]
+    )
 
-# Ruta para mostrar una cantidad específica de Pokémon
+#4-Pokemon por nombre----------------------------------------------------------------------------------------
+@app.route("/pokemon/<string:nombre>")
+def pokemon_por_nombre(nombre):
+    pokemon = next((p for p in pokedex if p["nombre"].lower() == nombre.lower()), None)
+    if not pokemon:
+        return pokemon_no_encontrado(f"No se encontró ningún Pokémon llamado '{nombre}'.")
+    return render_template(
+        "pokemon.html", 
+        pokemon=pokemon, 
+        titulo=pokemon["nombre"]
+    )
 
-# Error cuando no se encuentra un Pokémon
+#5-Error404 pokemon no encontrado----------------------------------------------------------------------------
 def pokemon_no_encontrado(mensaje: str):
-    """Función simple para renderizar la página 404 con un mensaje."""
-    return render_template("404.html", mensaje=mensaje)
+    return render_template("404.html", mensaje=mensaje), 404
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+#sorry but this doesn´t work
