@@ -1,0 +1,157 @@
+/* Configuración global y fuente */
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f8f9fa;
+    padding: 40px 20px;
+}
+
+/* Contenedor principal */
+.table-container {
+    width: 100%;
+    max-width: 900px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+/* Estilos de la Tabla */
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+/* Encabezado */
+.custom-table thead {
+    background-color: #1e2329;
+    color: #ffffff;
+}
+
+.custom-table th {
+    padding: 14px 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.custom-table th i {
+    font-size: 11px;
+    margin-left: 4px;
+    color: #a0aec0;
+}
+
+/* Filas y Celdas */
+.custom-table tbody tr {
+    border-bottom: 1px solid #edf2f7;
+    transition: background-color 0.2s ease;
+}
+
+.custom-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.custom-table tbody tr:hover {
+    background-color: #f7fafc;
+}
+
+.custom-table td {
+    padding: 12px 20px;
+    vertical-align: middle;
+    font-size: 14px;
+    color: #2d3748;
+}
+
+/* Marca / Logo + Nombre */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand i {
+    font-size: 22px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* Colores exactos para los íconos de cada plataforma */
+.icon-discord {
+    color: #5865f2;
+}
+
+.icon-instagram {
+    color: #e1306c;
+}
+
+.icon-netflix {
+    color: #e50914;
+}
+
+.icon-spotify {
+    color: #1ed760;
+}
+
+.icon-tiktok {
+    color: #000000;
+}
+
+.icon-twitch {
+    color: #9146ff;
+}
+
+.icon-youtube {
+    color: #ff0000;
+}
+
+/* Estilo del texto del año */
+.year {
+    color: #4a5568;
+}
+
+/* Badges (Etiquetas) */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.badge-blue {
+    background-color: #1a73e8;
+    color: #ffffff;
+}
+
+.badge-gray {
+    background-color: #718096;
+    color: #ffffff;
+}
+
+/* Botón de Detalles (Ícono cian) */
+.btn-info {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #00d8f6;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.btn-info:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+}

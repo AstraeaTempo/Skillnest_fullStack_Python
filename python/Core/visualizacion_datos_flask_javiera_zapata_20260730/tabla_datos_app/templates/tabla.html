@@ -1,0 +1,143 @@
+<!-- Inicio -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataformas digitales</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+
+    <nav>
+        <div>
+            <i class="bi bi-table"></i>
+            <h1>Plataformas Digitales</h1>
+        </div>
+        <div>
+            Visualización de datos de las principales plataformas digitales
+        </div>
+    </nav>
+    <div class="container-barra">
+        <div class="title">
+            <i class="bi bi-funnel-fill"></i>
+            <p>Filtros y Ordenamiento</p>
+        </div>
+        <div class="barra">
+            <!-- cuadro 1 -->
+            <div class="cuadro-1">
+                <p>Filtrar por país:</p>
+                <select id="opciones" name="opciones">
+                    <option value="países">Todos los países</option>
+                </select>
+            </div>
+            <!-- cuadro 2 -->
+            <div class="cuadro-2">
+                <p>Ordenar por:</p>
+                <select id="opciones" name="opciones">
+                    <option value="países">Nombre</option>
+                </select>
+            </div>
+            <!-- cuadro 3 -->
+            <div class="cuadro-3">
+                <p>Dirección:</p>
+                <select id="opciones" name="opciones">
+                    <option value="países">Ascendente</option>
+                </select>
+            </div>
+            <!-- fin cuadros -->
+        </div>
+    </div>
+<!-- tabla -->
+    <div class="table-container">
+        <table class="custom-table">
+            <thead>
+                <tr>
+                    <th>Nombre <i class="fa-solid fa-caret-down"></i></th>
+                    <th>Usuarios</th>
+                    <th>Año Fundación</th>
+                    <th>País</th>
+                    <th>Detalles</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="brand">
+                        <i class="bi bi-discord"></i>
+                        <strong>Discord</strong>
+                    </td>
+                    <td><span class="badge badge-blue">250M</span></td>
+                    <td class="year">2015</td>
+                    <td><span class="badge badge-gray">EE.UU.</span></td>
+                    <td><button class="btn-info"><i class="bi bi-info-circle-fill"></i></button></td>
+                </tr>
+                <tr>
+                    <td class="brand">
+                        <i class="bi bi-instagram"></i>
+                        <strong>Instagram</strong>
+                    </td>
+                    <td><span class="badge badge-blue">2.35B</span></td>
+                    <td class="year">2010</td>
+                    <td><span class="badge badge-gray">EE.UU.</span></td>
+                    <td><button class="btn-info"><i class="bi bi-info-circle-fill"></i></button></td>
+                </tr>
+                <tr>
+                    <td class="brand">
+                        <i class="fa-solid fa-square-n icon-netflix"></i>
+                        <strong>Netflix</strong>
+                    </td>
+                    <td><span class="badge badge-blue">247M</span></td>
+                    <td class="year">1997</td>
+                    <td><span class="badge badge-gray">EE.UU.</span></td>
+                    <td><button class="btn-info"><i class="bi bi-info-circle-fill"></i></i></button></td>
+                </tr>
+                <tr>
+                    <td class="brand">
+                        <i class="bi bi-spotify"></i>
+                        <strong>Spotify</strong>
+                    </td>
+                    <td><span class="badge badge-blue">515M</span></td>
+                    <td class="year">2006</td>
+                    <td><span class="badge badge-gray">Suecia</span></td>
+                    <td><button class="btn-info"><i class="bi bi-info-circle-fill"></i></button></td>
+                </tr>
+                <tr>
+                    <td class="brand">
+                        <i class="bi bi-tiktok"></i>
+                        <strong>TikTok</strong>
+                    </td>
+                    <td><span class="badge badge-blue">1.7B</span></td>
+                    <td class="year">2016</td>
+                    <td><span class="badge badge-gray">China</span></td>
+                    <td><button class="btn-info"><i class="bi bi-info-circle-fill"></i></button></td>
+                </tr>
+                <tr>
+                    <td class="brand">
+                        <i class="bi bi-twitch"></i>
+                        <strong>Twitch</strong>
+                    </td>
+                    <td><span class="badge badge-blue">140M</span></td>
+                    <td class="year">2011</td>
+                    <td><span class="badge badge-gray">EE.UU.</span></td>
+                    <td><button class="btn-info"><i class="bi bi-info-circle-fill"></i></button></td>
+                </tr>
+                <tr>
+                    <td class="brand">
+                        <i class="fa-brands fa-youtube icon-youtube"></i>
+                        <strong>YouTube</strong>
+                    </td>
+                    <td><span class="badge badge-blue">2.5B</span></td>
+                    <td class="year">2005</td>
+                    <td><span class="badge badge-gray">EE.UU.</span></td>
+                    <td><button class="btn-info"><i class="bi bi-info-circle-fill"></i></i></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>
