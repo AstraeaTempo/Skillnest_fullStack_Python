@@ -14,9 +14,9 @@ datos = [
 ]
 
 # Ruta para mostrar la tabla con datos-----------------------------------------------
-@app.route('/')
+@app.route('/tabla')
 def index():
-    return render_template('index.html', plataformas=datos)
+    return render_template("tabla.html", datos=datos, color=None)
 
 if __name__ == "__main__":
     app.run(debug=True)
