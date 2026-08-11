@@ -1,0 +1,19 @@
+.hero {
+    background: linear-gradient(135deg, #28a745, #218838);
+    padding: 60px 0;
+    margin-bottom: 30px;
+}
+
+.fruta-card {
+    transition: transform 0.2s ease-in-out;
+}
+
+.fruta-card:hover {
+    transform: translateY(-5px);
+}
+
+.fruta-card img {
+    height: 180px;
+    object-fit: contain;
+    padding: 15px;
+}
