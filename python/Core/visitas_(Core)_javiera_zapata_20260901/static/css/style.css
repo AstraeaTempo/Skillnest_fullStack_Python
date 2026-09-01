@@ -1,0 +1,179 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    /* Fondo con degradado tenue en tonos morados pasteles */
+    background: linear-gradient(135deg, #f3efe6 0%, #e8e0f0 50%, #dfd5ed 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.card {
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(120, 90, 140, 0.12);
+    text-align: center;
+    max-width: 420px;
+    width: 90%;
+    position: relative;
+    overflow: hidden;
+
+    /* Detalle sutil de circo: Borde superior que simula una carpa suave */
+    border-top: 8px solid #b8a7d4;
+    border-image: repeating-linear-gradient(
+        45deg,
+        #b8a7d4,
+        #b8a7d4 12px,
+        #f4effa 12px,
+        #f4effa 24px
+    ) 10;
+}
+
+/* Detalle decorativo sutil en el fondo de la tarjeta */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Patrón sutil de rayas circenses casi invisibles */
+    background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 20px,
+        rgba(184, 167, 212, 0.04) 20px,
+        rgba(184, 167, 212, 0.04) 40px
+    );
+    pointer-events: none;
+}
+
+h1 {
+    color: #5c4b75;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.counter-box {
+    background-color: #f5f0fa;
+    padding: 1.5rem;
+    border-radius: 16px;
+    margin-bottom: 1rem;
+    border: 1px dashed #d3c4e3;
+}
+
+.counter-number {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #6b528e;
+}
+
+.counter-label {
+    color: #927eaf;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.reset-count {
+    font-size: 0.88rem;
+    color: #726288;
+    margin-bottom: 1.5rem;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.custom-form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.custom-form input {
+    flex: 1;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #dcd1e8;
+    border-radius: 10px;
+    outline: none;
+    background-color: #faf8fc;
+    color: #5c4b75;
+}
+
+.custom-form input:focus {
+    border-color: #b8a7d4;
+    background-color: #ffffff;
+}
+
+.btn {
+    padding: 0.65rem 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(120, 90, 140, 0.15);
+}
+
+/* Botón +2 (Morado Pastel Principal) */
+.btn-primary { 
+    background-color: #a78bfa; 
+    color: white; 
+}
+.btn-primary:hover { 
+    background-color: #906ffa; 
+}
+
+/* Botón Añadir Formulario (Lilac Pastel) */
+.btn-secondary { 
+    background-color: #c4b5fd; 
+    color: #4c3b6f; 
+}
+.btn-secondary:hover { 
+    background-color: #b49ffc; 
+}
+
+/* Botón Reiniciar (Durazno/Rosa Pastel para contraste suave) */
+.btn-warning { 
+    background-color: #fbcfe8; 
+    color: #703358; 
+}
+.btn-warning:hover { 
+    background-color: #f9a8d4; 
+}
+
+/* Botón Destruir Sesión (Rojo/Lavanda sutil) */
+.btn-danger { 
+    background-color: #f43f5e; 
+    color: white; 
+    width: 100%; 
+    opacity: 0.85;
+}
+.btn-danger:hover { 
+    opacity: 1;
+    background-color: #e11d48;
+}
+
+.link-btn {
+    box-sizing: border-box;
+}

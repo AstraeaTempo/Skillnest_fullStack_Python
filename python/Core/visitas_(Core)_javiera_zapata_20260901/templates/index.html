@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Visitas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="card">
+        <h1>Contador de Visitas</h1>
+        
+        <div class="counter-box">
+            <p class="counter-number">{{ visitas }}</p>
+            <p class="counter-label">veces visitadas</p>
+        </div>
+
+        <p class="reset-count">El contador se ha reiniciado: <strong>{{ reinicios }}</strong> veces</p>
+
+        <div class="actions">
+            <form action="/sumar_dos" method="POST">
+                <button type="submit" class="btn btn-primary">+2 Visitas</button>
+            </form>
+
+            <form action="/reiniciar" method="POST">
+                <button type="submit" class="btn btn-warning">Reiniciar Contador</button>
+            </form>
+        </div>
+
+        <form action="/incrementar_personalizado" method="POST" class="custom-form">
+            <input type="number" name="cantidad" placeholder="Ingresa un número" min="1" required>
+            <button type="submit" class="btn btn-secondary">Añadir</button>
+        </form>
+
+        <a href="/destruir_sesion" class="btn btn-danger link-btn">Destruir Sesión</a>
+    </div>
+</body>
+</html>
