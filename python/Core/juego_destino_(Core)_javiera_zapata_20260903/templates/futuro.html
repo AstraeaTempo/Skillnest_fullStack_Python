@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Destino Revelado</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="card-container">
+        <div class="icon-header">☀️</div>
+        <h1>Tu Destino ha sido Revelado</h1>
+        <p class="subtitle">Las estrellas han hablado, <strong>{{ session['nombre'] }}</strong></p>
+
+        <div class="prediction-box">
+            <span class="star-icon">⭐</span>
+            <p>{{ prediccion }}</p>
+        </div>
+
+        <div class="details-grid">
+            <div class="detail-card">
+                <span class="detail-label">🎨 Tu Color</span>
+                <div class="color-badge" style="background-color: {{ session['color'] }};"></div>
+                <p>Tu preferencia por el color <strong>{{ session['color'] }}</strong> revela tu afinidad con el misterio y descubrimiento.</p>
+            </div>
+
+            <div class="detail-card">
+                <span class="detail-label">🐾 Tu Animal</span>
+                <p>Tu conexión con el <strong>{{ session['animal'] }}</strong> simboliza tu naturaleza de independencia y misterio.</p>
+            </div>
+        </div>
+
+        <div class="luck-section">
+            <h3>Tu número de la suerte</h3>
+            <div class="number-circle">{{ numero_suerte }}</div>
+            <p class="luck-desc">Este número te acompañará en momentos importantes.</p>
+        </div>
+
+        <p class="age-text">A tus <strong>{{ session['edad'] }}</strong> años, estás en un momento favorable para aprovechar nuevas oportunidades.</p>
+
+        <a href="/" class="btn-submit btn-reload">🔄 Consultar de nuevo</a>
+    </div>
+</body>
+</html>
