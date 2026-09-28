@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos los Tacos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="container py-5">
+
+    <div class="page-header">
+        <div>
+            <h1>Listado General de Tacos</h1>
+            <p class="text-muted">Todos los tacos guardados en la base de datos.</p>
+        </div>
+
+        <div>
+            <a href="{{ url_for('index') }}" class="btn btn-primary">
+                Crear Taco
+            </a>
+            <a href="{{ url_for('restaurantes') }}" class="btn btn-outline-secondary">
+                Restaurantes
+            </a>
+        </div>
+    </div>
+
+    {% if tacos %}
+        <div class="row g-4">
+            {% for taco in tacos %}
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card taco-card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h2 class="h4">Taco #{{ taco.id }}</h2>
+                            <hr>
+                            <p><strong>Tortilla:</strong> {{ taco.tortilla }}</p>
+                            <p><strong>Guiso:</strong> {{ taco.guiso }}</p>
+                            <p><strong>Salsa:</strong> {{ taco.salsa }}</p>
+                            <p class="text-muted small mb-0"><strong>ID Restaurante:</strong> {{ taco.restaurante_id }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-info">
+            No existen tacos registrados aún.
+        </div>
+    {% endif %}
+
+</div>
+
+</body>
+
+</html>
