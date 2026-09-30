@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Columna Registro -->
+        <div class="box">
+            <h2>Registro</h2>
+
+            {% with messages = get_flashed_messages(category_filter=["register"]) %}
+                {% if messages %}
+                    <div class="alerts">
+                        {% for message in messages %}
+                            <p class="error">{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+
+            <form action="/registro" method="POST">
+                <div class="form-group">
+                    <label>Nombre:</label>
+                    <input type="text" name="nombre">
+                </div>
+                <div class="form-group">
+                    <label>Apellido:</label>
+                    <input type="text" name="apellido">
+                </div>
+                <div class="form-group">
+                    <label>E-mail:</label>
+                    <input type="text" name="email">
+                </div>
+                <div class="form-group">
+                    <label>Fecha Nacimiento:</label>
+                    <input type="date" name="fecha_nacimiento">
+                </div>
+                <div class="form-group">
+                    <label>Contraseña:</label>
+                    <input type="password" name="password">
+                </div>
+                <div class="form-group">
+                    <label>Conf. Contraseña:</label>
+                    <input type="password" name="confirm_password">
+                </div>
+                <button type="submit">Registrar</button>
+            </form>
+        </div>
+
+        <!-- Columna Inicio de Sesión -->
+        <div class="box">
+            <h2>Inicio de Sesión</h2>
+
+            {% with messages = get_flashed_messages(category_filter=["login"]) %}
+                {% if messages %}
+                    <div class="alerts">
+                        {% for message in messages %}
+                            <p class="error">{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+
+            <form action="/login" method="POST">
+                <div class="form-group">
+                    <label>E-mail:</label>
+                    <input type="text" name="email">
+                </div>
+                <div class="form-group">
+                    <label>Contraseña:</label>
+                    <input type="password" name="password">
+                </div>
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
