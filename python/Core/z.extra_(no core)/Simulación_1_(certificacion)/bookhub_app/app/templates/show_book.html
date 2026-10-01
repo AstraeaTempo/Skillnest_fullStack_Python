@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-md-7 mb-4">
+        <div class="card shadow-sm p-4">
+            <div class="d-flex mb-3">
+                <div class="bg-light d-flex align-items-center justify-content-center me-3 border rounded" style="width: 120px; height: 120px;">
+                    <i class="bi bi-image text-secondary fs-1"></i>
+                </div>
+                <div>
+                    <h2 class="fw-bold mb-1">{{ book.title }}</h2>
+                    <p class="mb-1"><strong>Autor:</strong> {{ book.author }}</p>
+                    <p class="mb-1"><strong>Género:</strong> {{ book.genre }}</p>
+                    <p class="mb-1"><strong>Publicado por:</strong> {{ book.user_name }}</p>
+                    <p class="mb-2"><strong>Fecha:</strong> {{ book.release_date.strftime('%Y-%m-%d') if book.release_date else '' }}</p>
+                    
+                    {% if not is_favorited and book.user_id != session['user_id'] %}
+                    <form action="/favoritos/agregar/{{ book.id }}" method="POST">
+                        <button type="submit" class="btn btn-outline-dark btn-sm">
+                            <i class="bi bi-heart"></i> Agregar a Favoritos
+                        </button>
+                    </form>
+                    {% endif %}
+                </div>
+            </div>
+            <div>
+                <p class="mt-3"><strong>Descripción:</strong> {{ book.description }}</p>
+            </div>
+            <div class="mt-4">
+                <a href="/libros" class="btn btn-link p-0 text-decoration-none">← Volver a Mis Libros</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-5 mb-4">
+        <div class="card shadow-sm p-3">
+            <h5 class="card-title mb-3">Usuarios que agregaron este libro a favoritos ({{ favorited_users|length }})</h5>
+            <ul class="list-group list-group-flush">
+                {% for user in favorited_users %}
+                <li class="list-group-item d-flex align-items-center border-0 px-0">
+                    <i class="bi bi-person-circle fs-4 me-2 text-secondary"></i>
+                    <span>{{ user.name }}</span>
+                </li>
+                {% else %}
+                <li class="list-group-item border-0 px-0 text-muted">Nadie ha agregado este libro a favoritos aún.</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
