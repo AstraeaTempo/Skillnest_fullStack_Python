@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    padding: 20px;
+}
+
+.nav-links a {
+    margin-left: 15px;
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.error-msg {
+    color: #dc3545;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.comment-box {
+    border: 1px solid #ccc;
+    background-color: #e9ecef;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.comment-item {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.comment-item:last-child {
+    border-bottom: none;
+}
