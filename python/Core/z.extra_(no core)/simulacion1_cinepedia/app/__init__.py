@@ -1,4 +1,9 @@
+import os
 from flask import Flask
+from dotenv import load_dotenv
+
+# Cargar variables de entorno desde el archivo .env
+load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = "clave_secreta_super_segura_cinepedia"
+app.secret_key = os.getenv("SECRET_KEY", "clave_por_defecto_seguridad")

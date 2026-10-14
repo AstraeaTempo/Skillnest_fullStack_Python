@@ -1,15 +1,16 @@
 import pymysql.cursors
 
+
 class MySQLConnection:
     def __init__(self, db):
         connection = pymysql.connect(
-            host='localhost',
-            user='root',
-            password='rootpassword', # Cambia según tu configuración
+            host="localhost",
+            user="root",
+            password="rootpassword",  # Cambia según tu configuración
             db=db,
-            charset='utf8mb4',
+            charset="utf8mb4",
             cursorclass=pymysql.cursors.DictCursor,
-            autocommit=True
+            autocommit=True,
         )
         self.connection = connection
 
@@ -32,6 +33,7 @@ class MySQLConnection:
                 return False
             finally:
                 self.connection.close()
+
 
 def connectToMySQL(db):
     return MySQLConnection(db)
