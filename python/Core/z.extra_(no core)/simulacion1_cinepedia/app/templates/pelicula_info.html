@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Ver Peli</title>
+    <!-- titulo -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+<!-- fin de cabeza -->
+<!-- cuerpo -->
+
 <body>
     <div class="container mt-4">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h1>{{ pelicula.titulo }}</h1>
+            <!-- links -->
             <div class="nav-links">
                 <a href="/cine">Inicio</a>
                 <a href="/logout">Cerrar Sesión</a>
@@ -18,41 +24,44 @@
 
         <p><strong>Publicado por:</strong> {{ pelicula.creador }}</p>
         <p><strong>Director:</strong> {{ pelicula.director }}</p>
-        <p><strong>Fecha:</strong> {{ pelicula.fecha_estreno.strftime('%Y-%m-%d') if pelicula.fecha_estreno else '' }}</p>
+        <p><strong>Fecha:</strong> {{ pelicula.fecha_estreno.strftime('%Y-%m-%d') if pelicula.fecha_estreno else '' }}
+        </p>
         <p><strong>Sinopsis:</strong> {{ pelicula.sinopsis }}</p>
 
-        <!-- BONUS: Comentarios -->
+        <!-- Comentarios -->
         <div class="comment-box col-md-8">
             {% with messages = get_flashed_messages(category_filter=['comentario']) %}
-                {% if messages %}
-                    {% for msg in messages %}
-                        <div class="error-msg">{{ msg }}</div>
-                    {% endfor %}
-                {% endif %}
+            {% if messages %}
+            {% for msg in messages %}
+            <div class="error-msg">{{ msg }}</div>
+            {% endfor %}
+            {% endif %}
             {% endwith %}
 
             {% if pelicula.usuario_id != session['usuario_id'] %}
-                <form action="/cine/comentario/crear" method="POST" class="d-flex gap-2 mb-4">
-                    <input type="hidden" name="pelicula_id" value="{{ pelicula.id }}">
-                    <input type="text" name="contenido" class="form-control" placeholder="Escribe un comentario..." required>
-                    <button type="submit" class="btn btn-outline-dark">Enviar</button>
-                </form>
+            <form action="/cine/comentario/crear" method="POST" class="d-flex gap-2 mb-4">
+                <input type="hidden" name="pelicula_id" value="{{ pelicula.id }}">
+                <input type="text" name="contenido" class="form-control" placeholder="Escribe un comentario..."
+                    required>
+                <button type="submit" class="btn btn-outline-dark">Enviar</button>
+            </form>
             {% endif %}
 
             <div class="comments-list">
                 {% for comentario in comentarios %}
-                    <div class="comment-item d-flex justify-content-between align-items-start">
-                        <div>
-                            <strong>{{ comentario.autor }} - {{ comentario.created_at.strftime('%d de %B') }}</strong>
-                            <p class="mb-0">{{ comentario.contenido }}</p>
-                        </div>
-                        {% if comentario.usuario_id == session['usuario_id'] %}
-                            <a href="/cine/comentario/eliminar/{{ comentario.id }}" class="btn btn-danger btn-sm">Borrar</a>
-                        {% endif %}
+                <div class="comment-item d-flex justify-content-between align-items-start">
+                    <div>
+                        <strong>{{ comentario.autor }} - {{ comentario.created_at.strftime('%d de %B') }}</strong>
+                        <p class="mb-0">{{ comentario.contenido }}</p>
                     </div>
+                    {% if comentario.usuario_id == session['usuario_id'] %}
+                    <a href="/cine/comentario/eliminar/{{ comentario.id }}" class="btn btn-danger btn-sm">Borrar</a>
+                    {% endif %}
+                </div>
                 {% endfor %}
             </div>
         </div>
     </div>
 </body>
+
 </html>
