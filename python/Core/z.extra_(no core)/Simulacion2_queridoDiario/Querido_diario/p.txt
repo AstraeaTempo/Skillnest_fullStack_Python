@@ -1,0 +1,51 @@
+ Requisitos para aprobar
+ Inicio de sesión y Registro con validaciones:
+
+Los errores de validación se deben mostrar en la página.
+Cerrar sesión.
+ Página Principal:
+
+Muestra únicamente las entradas del usuario en sesión, incluyendo la fecha
+El enlace Borrar elimina la entrada de la base de datos.
+El enlace Editar redirecciona a la página Editar.
+La página principal debe decir «Bienvenido {{ nombre de usuario }}»
+ El enlace «Ver» redirecciona a la página individual de cada entrada.
+ Crear una nueva entrada:
+
+Esta pantalla solo es accesada si el usuario inició sesión
+Validar que los campos no estén vacíos
+ Editar una entrada:
+
+Esta pantalla solo es accesada si el usuario inició sesión
+Mismas validaciones que la creación
+Los campos están pre-populados la información actual de esa asesoría desde la base de datos.
+ HTML y CSS deben reflejar la estructura como mínimo al 75% de precisión.
+ Requisitos para BONUS
+ En la Página Principal, las entradas aparecen de más reciente a más antigua
+ El usuario no puede borrar entradas de otros usuarios, aún y que manualmente altere la URL
+ En la creación de la entrada, no puede crearse una entrada con fecha en el futuro
+ En la edición, implementar las mismas validaciones.
+ El usuario en sesión no puede visualizar entradas de otros usuarios, aún y que manualmente altere la URL
+ En la Página Principal, agregamos una barra de búsqueda que redirige a la página de Buscar, donde a través de la URL enviará el término de búsqueda
+ La página de Buscar mostrará las entradas que incluyen en Notas el término de búsqueda enviado a través de la URL
+ Notas
+ Reglas de asistencia y habilitación: Para rendir exámenes de certificación, el estudiante debe cumplir:
+
+80% de asistencia a las sesiones obligatorias.
+90% de actividades obligatorias completadas.
+ Clasificación de certificación:
+
+ Oro: rendimiento sobresaliente
+
+≥ 95% de calificación del examen.
+Tiempo de ejecución: máximo 5 horas.
+≥ 75% de los bonus implementados.
+Con despliegue (hosting público).
+ Plata: rendimiento promedio
+
+≥ 80% de calificación.
+Tiempo de ejecución: máximo 5 horas.
+ Bronce: rendimiento regular
+
+≥ 80% de calificación.
+Tiempo de ejecución: mínimo 5 horas y máximo 24 horas.
