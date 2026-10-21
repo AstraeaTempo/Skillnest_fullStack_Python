@@ -1,0 +1,56 @@
+/* Estilos generales con tonos morados suaves */
+body {
+    background-color: #f3f0f7; /* Morado muy suave / lila de fondo */
+    color: #2c223b;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Tarjetas con bordes y tonos armónicos */
+.card, .wireframe-border {
+    border: 2px solid #6b4c9a !important; /* Morado medio para bordes */
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(107, 76, 154, 0.08);
+}
+
+/* Botones principales: Morado oscuro con letra blanca */
+.btn-outline-dark, 
+.btn-primary, 
+button[type="submit"], 
+.btn-sm.btn-outline-dark {
+    background-color: #4a2e7a !important; /* Morado oscuro */
+    color: #ffffff !important;
+    border-color: #3b2260 !important;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Efecto hover para los botones */
+.btn-outline-dark:hover, 
+.btn-primary:hover, 
+button[type="submit"]:hover, 
+.btn-sm.btn-outline-dark:hover {
+    background-color: #3b2260 !important; /* Un morado aún más profundo */
+    border-color: #2c1848 !important;
+    color: #ffffff !important;
+}
+
+/* Alertas y notificaciones suaves */
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+/* Enlaces y cabeceras */
+h1, h2, h3, h4, h5 {
+    color: #3b2260;
+}
+
+a {
+    color: #5b3896;
+}
+
+a:hover {
+    color: #3b2260;
+}
